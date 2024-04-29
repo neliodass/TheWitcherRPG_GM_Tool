@@ -3,9 +3,12 @@ enum Gender {male,female};
 class Entity
 {
 	protected:
-		int maxHealth;
+		const int maxHealth;
 		Gender gender;
 		int currentHealth;
+		int parry;
+		int evadePotential;
+		int attackPotential;
 		bool alive = true;
 		bool magical = false;
 
