@@ -1,9 +1,11 @@
 #pragma once
-#include "PlayableCharachter.h"
+#include "PlayableCharacter.h"
 class Team
 {
-	PlayableCharachter team[10];
+	PlayableCharacter team[10];
 	int playersAmount = 0;
+public:
+	void addCharacter(PlayableCharacter newPlayer);
 	
 };
 

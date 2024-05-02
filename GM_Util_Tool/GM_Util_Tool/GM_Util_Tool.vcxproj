@@ -92,7 +92,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="PlayableCharachter.cpp" />
+    <ClCompile Include="PlayableCharacter.cpp" />
     <ClCompile Include="Team.cpp" />
     <ClCompile Include="Weapon.cpp" />
     <QtRcc Include="GM_Util_Tool.qrc" />
@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h" />
-    <ClInclude Include="PlayableCharachter.h" />
+    <ClInclude Include="PlayableCharacter.h" />
     <ClInclude Include="Team.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
