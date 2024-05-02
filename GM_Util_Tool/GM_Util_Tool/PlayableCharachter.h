@@ -9,7 +9,7 @@ class PlayableCharachter :
     protected:
         CharacterRace characterRace;
         CharacterClass characterClass;
-        
+        int age;
 
 };
 

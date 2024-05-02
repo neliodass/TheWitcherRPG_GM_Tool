@@ -1,12 +1,12 @@
 #pragma once
-enum Gender {male,female};
+#include <string>
 class Entity
 {
 	protected:
+		std::string name;
 		const int maxHealth;
-		Gender gender;
 		int currentHealth;
-		int parry;
+		int armor;
 		int evadePotential;
 		int attackPotential;
 		bool alive = true;
