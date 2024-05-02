@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Weapon.h"
 class Entity
 {
 	protected:
@@ -9,6 +10,7 @@ class Entity
 		int armor;
 		int evadePotential;
 		int attackPotential;
+		Weapon weapon;
 		bool alive = true;
 		bool magical = false;
 
