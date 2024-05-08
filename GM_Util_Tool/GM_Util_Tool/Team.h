@@ -6,6 +6,8 @@ class Team
 	int playersAmount = 0;
 public:
 	void addCharacter(PlayableCharacter newPlayer);
+	int getTeamSize();
+	const PlayableCharacter getCharacter(int characterId);
 	
 };
 

@@ -7,7 +7,3 @@ PlayableCharacter::PlayableCharacter(CharacterRace characterRace, CharacterClass
 	this->age = age;
 }
 
-PlayableCharacter::PlayableCharacter(const PlayableCharacter&)
-{
-
-}
