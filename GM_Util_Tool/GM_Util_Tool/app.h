@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
+#include <QFileDialog>
 #include "ui_app.h"
 
 class app : public QMainWindow
@@ -11,6 +12,10 @@ public:
     app(QWidget *parent = nullptr);
     ~app();
 
+public slots:
+    void on_buttonAvatarChoice_clicked();
+
 private:
     Ui::appClass ui;
+    QString avatarPath = "";
 };
