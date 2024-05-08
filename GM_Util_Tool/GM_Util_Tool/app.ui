@@ -96,28 +96,12 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="4" column="3">
-       <widget class="QLineEdit" name="inputEvasion"/>
-      </item>
-      <item row="2" column="0" colspan="3">
-       <widget class="QLabel" name="labelArmor">
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelName">
         <property name="text">
-         <string>Wyparowania</string>
+         <string>Imię</string>
         </property>
        </widget>
-      </item>
-      <item row="7" column="0" colspan="2">
-       <widget class="QLabel" name="labelWeaponDamage">
-        <property name="text">
-         <string>Obrażenia</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="3">
-       <widget class="QLineEdit" name="inputAttack"/>
-      </item>
-      <item row="7" column="3">
-       <widget class="QLineEdit" name="inputWeaponDamage"/>
       </item>
       <item row="0" column="1" colspan="3">
        <widget class="QLineEdit" name="inputName">
@@ -132,9 +116,6 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="3">
-       <widget class="QLineEdit" name="inputHP"/>
-      </item>
       <item row="1" column="0">
        <widget class="QLabel" name="labelHP">
         <property name="text">
@@ -142,24 +123,178 @@
         </property>
        </widget>
       </item>
-      <item row="6" column="3">
-       <widget class="QLineEdit" name="inputWeaponName"/>
+      <item row="1" column="3">
+       <widget class="QLineEdit" name="inputHP"/>
       </item>
-      <item row="6" column="0" colspan="2">
-       <widget class="QLabel" name="labelWeaponName">
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelRace">
         <property name="text">
-         <string>Nazwa</string>
+         <string>Rasa</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0" colspan="2">
+      <item row="2" column="1" colspan="3">
+       <widget class="QComboBox" name="inputRace">
+        <item>
+         <property name="text">
+          <string>Człowiek</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Elf</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Krasnolud</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Wiedźmin</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Niziołek</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Gnom</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Vran</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bobołak</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="labelClass">
+        <property name="text">
+         <string>Klasa</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2" colspan="2">
+       <widget class="QComboBox" name="inputClass">
+        <item>
+         <property name="text">
+          <string>Bard</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Czarodziej</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Druid</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Kapłan</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Kupiec</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Medyk</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Przestępca</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Rzemieślnik</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Szlachcic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Wiedźmin</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Zbrojny</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="3">
+       <widget class="QLabel" name="labelArmor">
+        <property name="text">
+         <string>Wyparowania</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QLineEdit" name="inputArmor"/>
+      </item>
+      <item row="5" column="0" colspan="2">
        <widget class="QLabel" name="labelAttack">
         <property name="text">
          <string>Pot. ataku</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="0" colspan="4">
+      <item row="5" column="3">
+       <widget class="QLineEdit" name="inputAttack"/>
+      </item>
+      <item row="6" column="0" colspan="2">
+       <widget class="QLabel" name="labelEvasion">
+        <property name="text">
+         <string>Pot. uniku</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="3">
+       <widget class="QLineEdit" name="inputEvasion"/>
+      </item>
+      <item row="7" column="0" colspan="4">
+       <widget class="QCheckBox" name="checkboxIsMagical">
+        <property name="text">
+         <string>Postać wrażliwa na magię</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0" colspan="2">
+       <widget class="QLabel" name="labelSorcery">
+        <property name="text">
+         <string>Pot. Zaklęć</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="3">
+       <widget class="QLineEdit" name="inputSorcery">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0" colspan="4">
        <widget class="QLabel" name="labelWeapon">
         <property name="minimumSize">
          <size>
@@ -177,22 +312,25 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="labelName">
+      <item row="10" column="0" colspan="2">
+       <widget class="QLabel" name="labelWeaponName">
         <property name="text">
-         <string>Imię</string>
+         <string>Nazwa</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="3">
-       <widget class="QLineEdit" name="inputArmor"/>
+      <item row="10" column="3">
+       <widget class="QLineEdit" name="inputWeaponName"/>
       </item>
-      <item row="4" column="0" colspan="2">
-       <widget class="QLabel" name="labelEvasion">
+      <item row="11" column="0" colspan="2">
+       <widget class="QLabel" name="labelWeaponDamage">
         <property name="text">
-         <string>Pot. uniku</string>
+         <string>Obrażenia</string>
         </property>
        </widget>
+      </item>
+      <item row="11" column="3">
+       <widget class="QLineEdit" name="inputWeaponDamage"/>
       </item>
      </layout>
     </widget>
@@ -226,5 +364,38 @@
  <resources>
   <include location="app.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>checkboxIsMagical</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelSorcery</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>228</x>
+     <y>349</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>370</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkboxIsMagical</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>inputSorcery</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>335</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>333</x>
+     <y>370</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
