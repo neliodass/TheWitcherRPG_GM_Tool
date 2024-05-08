@@ -16,6 +16,8 @@ class Entity
 
 	public:
 		Entity();
+		Entity(const std::string name, const int maxHealth, const int currentHealth, const int armor,
+			const int evadePotential, const int attackPotential, const Weapon weapon, const bool alive, const bool magical);
 		Entity(const Entity&);
 		
 		//Setters for class attributes
@@ -27,6 +29,8 @@ class Entity
 		inline void setAttackPotential(const int attackPotential) { this->attackPotential = attackPotential; }
 		inline void setWeapon(const Weapon weapon) { this->weapon = weapon; }
 		inline void setMagical(const bool magical) { this->magical = magical; }
+
+
 		//Getters
 		inline auto getName() const -> const std::string& { return name; }
 		inline auto getMaxHealth() const -> const int { return maxHealth; }
