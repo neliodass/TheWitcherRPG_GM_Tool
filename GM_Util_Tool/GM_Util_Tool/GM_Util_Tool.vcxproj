@@ -92,10 +92,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="GM_Util_Tool.qrc" />
-    <QtUic Include="GM_Util_Tool.ui" />
-    <QtMoc Include="GM_Util_Tool.h" />
-    <ClCompile Include="GM_Util_Tool.cpp" />
+    <QtRcc Include="app.qrc" />
+    <QtUic Include="app.ui" />
+    <QtMoc Include="app.h" />
+    <ClCompile Include="app.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
