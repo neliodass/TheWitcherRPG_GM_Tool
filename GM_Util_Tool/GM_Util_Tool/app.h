@@ -14,6 +14,7 @@ public:
 
 public slots:
     void on_buttonAvatarChoice_clicked();
+    void on_buttonSave_clicked();
 
 private:
     Ui::appClass ui;
