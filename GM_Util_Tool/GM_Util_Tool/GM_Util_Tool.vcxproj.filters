@@ -23,20 +23,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="app.qrc">
+    <QtRcc Include="GM_Util_Tool.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <QtUic Include="app.ui">
+    <QtUic Include="GM_Util_Tool.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtMoc Include="app.h">
+    <QtMoc Include="GM_Util_Tool.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <ClCompile Include="app.cpp">
+    <ClCompile Include="GM_Util_Tool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
-
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
@@ -68,5 +67,4 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
-
 </Project>
