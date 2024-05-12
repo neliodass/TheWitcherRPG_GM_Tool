@@ -20,7 +20,7 @@
    <widget class="QFrame" name="frameCharacterCreator">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>190</x>
       <y>50</y>
       <width>521</width>
       <height>421</height>
@@ -99,8 +99,8 @@
     <widget class="QPushButton" name="buttonAvatarChoice">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>80</y>
+       <x>245</x>
+       <y>72</y>
        <width>101</width>
        <height>61</height>
       </rect>
@@ -131,13 +131,13 @@
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
+    <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>9</x>
-       <y>35</y>
+       <x>10</x>
+       <y>36</y>
        <width>215</width>
-       <height>346</height>
+       <height>324</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -148,7 +148,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1" colspan="3">
+      <item row="0" column="1" colspan="4">
        <widget class="QLineEdit" name="inputName">
         <property name="minimumSize">
          <size>
@@ -168,9 +168,6 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="3">
-       <widget class="QLineEdit" name="inputHP"/>
-      </item>
       <item row="2" column="0">
        <widget class="QLabel" name="labelRace">
         <property name="text">
@@ -178,7 +175,69 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="1" colspan="3">
+      <item row="3" column="0">
+       <widget class="QLabel" name="labelProfession">
+        <property name="text">
+         <string>Klasa</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="3">
+       <widget class="QLabel" name="labelArmor">
+        <property name="text">
+         <string>Wyparowania</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3" colspan="2">
+       <widget class="QLineEdit" name="inputArmor"/>
+      </item>
+      <item row="5" column="0" colspan="2">
+       <widget class="QLabel" name="labelAttack">
+        <property name="text">
+         <string>Pot. ataku</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0" colspan="2">
+       <widget class="QLabel" name="labelEvasion">
+        <property name="text">
+         <string>Pot. uniku</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0" colspan="2">
+       <widget class="QLabel" name="labelSorcery">
+        <property name="text">
+         <string>Pot. Zaklęć</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0" colspan="2">
+       <widget class="QLabel" name="labelWeaponName">
+        <property name="text">
+         <string>Nazwa broni</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0" colspan="2">
+       <widget class="QLabel" name="labelWeaponDamage">
+        <property name="text">
+         <string>Obrażenia</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="4">
+       <widget class="QLabel" name="labelK6">
+        <property name="text">
+         <string>k6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="4">
+       <widget class="QLineEdit" name="inputHP"/>
+      </item>
+      <item row="2" column="1" colspan="4">
        <widget class="QComboBox" name="inputRace">
         <item>
          <property name="text">
@@ -222,14 +281,7 @@
         </item>
        </widget>
       </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="labelProfession">
-        <property name="text">
-         <string>Klasa</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2" colspan="2">
+      <item row="3" column="1" colspan="4">
        <widget class="QComboBox" name="inputProfession">
         <item>
          <property name="text">
@@ -288,93 +340,30 @@
         </item>
        </widget>
       </item>
-      <item row="4" column="0" colspan="3">
-       <widget class="QLabel" name="labelArmor">
-        <property name="text">
-         <string>Wyparowania</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="3">
-       <widget class="QLineEdit" name="inputArmor"/>
-      </item>
-      <item row="5" column="0" colspan="2">
-       <widget class="QLabel" name="labelAttack">
-        <property name="text">
-         <string>Pot. ataku</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="3">
+      <item row="5" column="2" colspan="3">
        <widget class="QLineEdit" name="inputAttack"/>
       </item>
-      <item row="6" column="0" colspan="2">
-       <widget class="QLabel" name="labelEvasion">
-        <property name="text">
-         <string>Pot. uniku</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="3">
+      <item row="6" column="2" colspan="3">
        <widget class="QLineEdit" name="inputEvasion"/>
       </item>
-      <item row="7" column="0" colspan="4">
+      <item row="7" column="0" colspan="5">
        <widget class="QCheckBox" name="checkBoxIsMagical">
         <property name="text">
          <string>Postać wrażliwa na magię</string>
         </property>
        </widget>
       </item>
-      <item row="8" column="0" colspan="2">
-       <widget class="QLabel" name="labelSorcery">
-        <property name="text">
-         <string>Pot. Zaklęć</string>
-        </property>
-       </widget>
-      </item>
-      <item row="8" column="3">
+      <item row="8" column="2" colspan="3">
        <widget class="QLineEdit" name="inputSorcery">
         <property name="enabled">
          <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="9" column="0" colspan="4">
-       <widget class="QLabel" name="labelWeapon">
-        <property name="minimumSize">
-         <size>
-          <width>181</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <hintingpreference>PreferVerticalHinting</hintingpreference>
-         </font>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Broń&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="10" column="0" colspan="2">
-       <widget class="QLabel" name="labelWeaponName">
-        <property name="text">
-         <string>Nazwa</string>
-        </property>
-       </widget>
-      </item>
-      <item row="10" column="3">
+      <item row="9" column="2" colspan="3">
        <widget class="QLineEdit" name="inputWeaponName"/>
       </item>
-      <item row="11" column="0" colspan="2">
-       <widget class="QLabel" name="labelWeaponDamage">
-        <property name="text">
-         <string>Obrażenia</string>
-        </property>
-       </widget>
-      </item>
-      <item row="11" column="3">
+      <item row="10" column="2" colspan="2">
        <widget class="QLineEdit" name="inputWeaponDamage"/>
       </item>
      </layout>
@@ -385,6 +374,28 @@
     <zorder>frameAvatar</zorder>
     <zorder>buttonAvatarChoice</zorder>
     <zorder>layoutWidget_2</zorder>
+    <zorder>labelProfession</zorder>
+    <zorder>labelWeaponDamage</zorder>
+    <zorder>inputProfession</zorder>
+    <zorder>inputArmor</zorder>
+    <zorder>labelHP</zorder>
+    <zorder>checkBoxIsMagical</zorder>
+    <zorder>labelWeaponName</zorder>
+    <zorder>labelArmor</zorder>
+    <zorder>inputWeaponName</zorder>
+    <zorder>labelAttack</zorder>
+    <zorder>inputRace</zorder>
+    <zorder>labelSorcery</zorder>
+    <zorder>labelEvasion</zorder>
+    <zorder>inputAttack</zorder>
+    <zorder>labelName</zorder>
+    <zorder>inputName</zorder>
+    <zorder>inputWeaponDamage</zorder>
+    <zorder>labelRace</zorder>
+    <zorder>inputEvasion</zorder>
+    <zorder>inputHP</zorder>
+    <zorder>inputSorcery</zorder>
+    <zorder>labelK6</zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
