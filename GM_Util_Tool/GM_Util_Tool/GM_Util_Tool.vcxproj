@@ -36,7 +36,7 @@
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
-    <QtInstall>6.7.0_msvc2019_64</QtInstall>
+    <QtInstall>6.6.3_msvc2019_64</QtInstall>
     <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
@@ -92,6 +92,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <QtRcc Include="app.qrc" />
+    <QtUic Include="app.ui" />
+    <QtMoc Include="app.h" />
+    <ClCompile Include="app.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayableCharacter.cpp" />
     <ClCompile Include="Team.cpp" />
     <ClCompile Include="Weapon.cpp" />

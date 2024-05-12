@@ -1,4 +1,4 @@
-#include "GM_Util_Tool.h"
+#include "app.h"
 #include <QtWidgets/QApplication>
 #include <PlayableCharacter.h>
 #include <Team.h>
@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    GM_Util_Tool w;
+    app w;
     w.show();
     
     return a.exec();
