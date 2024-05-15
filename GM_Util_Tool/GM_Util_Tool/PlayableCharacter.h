@@ -25,6 +25,6 @@ class PlayableCharacter :
         auto getAge() const -> const int { return age; }
         auto getDescription() const -> const std::string { return description; }
         void saveToBinaryFile(const std::string& filename);
-        void readFromBinaryFile(const std::string& filename);
+        void readFromBinaryFile(std::ifstream& file);
 };
 

@@ -24,25 +24,36 @@ int Team::getTeamSize()
 		return this->team[characterId - 1];
 	}
 }
- void Team::saveToBinaryFile(const std::string& filename){
+ void Team::saveToBinaryFile(const std::string& filename) {
 	 std::ofstream file(filename, std::ios::binary);
 	 if (file.is_open()) {
-		 file.write(reinterpret_cast<const char*>(this), sizeof(*this));
+		 int length = team.size();
+		 file.write(reinterpret_cast<const char*>(&length), sizeof(length));
 		 file.close();
+		 for (auto character : team) {
+			 character.saveToBinaryFile(filename);
+		 }
 		 std::cout << "Dane zapisane do pliku binarnego.\n";
 	 }
 	 else {
 		 std::cerr << "Nie mo¿na otworzyæ pliku binarnego.\n";
 	 }
  }
- void Team::readFromBinaryFile(const std::string& filename) {
-	 std::ifstream file(filename, std::ios::binary);
-	 if (file.is_open()) {
-		 file.read(reinterpret_cast<char*>(this), sizeof(*this));
-		 file.close();
-		 std::cout << "Dane wczytane z pliku binarnego.\n";
+void Team::readFromBinaryFile(const std::string& filename) {
+ std::ifstream file(filename, std::ios::binary);
+ if (file.is_open()) {
+	 int length = team.size();
+	 file.read(reinterpret_cast<char*>(&length), sizeof(length));
+	 PlayableCharacter e1;
+	 for (int i = 0; i < length;i++) {
+		 e1.readFromBinaryFile(file);
+		 this->addCharacter(e1);
 	 }
-	 else {
-		 std::cerr << "Nie mo¿na otworzyæ pliku binarnego.\n";
-	 }
+	 file.close();
+	 //TODO Monit o udanym odczycie pliku
+	 //std::cout << "Dane wczytane z pliku binarnego.\n";
+ }
+ else {
+	 std::cerr << "Nie mo¿na otworzyæ pliku binarnego.\n";
+ }
  }

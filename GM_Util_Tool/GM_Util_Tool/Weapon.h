@@ -1,11 +1,9 @@
 #pragma once
 #include <string>
-#include"Entity.h"
-#include"PlayableCharacter.h"
 
 class Weapon
 {
-	friend class Entity;
+	
 	friend class PlayableCharacter;
 protected:	
 	std::string name = "";
