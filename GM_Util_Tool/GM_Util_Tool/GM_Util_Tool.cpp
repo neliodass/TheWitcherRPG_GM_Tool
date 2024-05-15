@@ -4,8 +4,8 @@ GM_Util_Tool::GM_Util_Tool(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
-    ui.labelSorcery->setVisable(false);
-    ui.inputSorcery->setVisable(false);
+    ui.labelSorcery->setVisible(false);
+    ui.inputSorcery->setVisible(false);
 }
 
 GM_Util_Tool::~GM_Util_Tool()

@@ -12,14 +12,12 @@ public:
     GM_Util_Tool(QWidget *parent = nullptr);
     ~GM_Util_Tool();
 
-private:
-    Ui::GM_Util_ToolClass ui;
 
 public slots:
     void on_buttonAvatarChoice_clicked();
     void on_buttonSave_clicked();
 
 private:
-    Ui::appClass ui;
+    Ui::GM_Util_ToolClass ui;
     QString avatarPath = "";
 };
