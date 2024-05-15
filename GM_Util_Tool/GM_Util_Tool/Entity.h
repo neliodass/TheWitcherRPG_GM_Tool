@@ -3,6 +3,7 @@
 #include "Weapon.h"
 class Entity
 {
+	
 	protected:
 		std::string name = "";
 		int maxHealth = 0;
