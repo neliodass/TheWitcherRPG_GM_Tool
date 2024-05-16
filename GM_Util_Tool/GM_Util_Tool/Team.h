@@ -4,7 +4,7 @@
 class Team
 {
 	std::vector<PlayableCharacter> team;
-	int playersAmount = 0;
+
 public:
 	void addCharacter();
 	void addCharacter(PlayableCharacter newPlayer);

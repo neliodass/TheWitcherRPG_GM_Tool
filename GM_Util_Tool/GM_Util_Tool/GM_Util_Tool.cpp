@@ -42,19 +42,26 @@ void GM_Util_Tool::on_buttonAvatarChoice_clicked() {
 }
 
 void GM_Util_Tool::on_buttonSave_clicked() {
-    QString name = ui.inputName->text();
-    QString HP = ui.inputHP->text();
-    QString race = ui.inputRace->currentText();
-    QString profession = ui.inputProfession->currentText();
-    QString armor = ui.inputArmor->text();
-    QString attack = ui.inputAttack->text();
-    QString evasion = ui.inputEvasion->text();
-    bool isMagical = ui.checkBoxIsMagical->isChecked();
-    QString sorcery = ui.inputSorcery->text();
-    QString weaponName = ui.inputWeaponName->text();
-    QString weaponDamage = ui.inputWeaponDamage->text();
-    QString backstory = ui.inputBackstory->toPlainText();
+    newTeam.addCharacter();
+    
+    PlayableCharacter currentCharacter = newTeam.getCharacter(newTeam.getTeamSize() - 1);
+    
+    currentCharacter.setName(ui.inputName->text().toStdString());
+    currentCharacter.setMaxHealth(ui.inputHP->text().toInt());
+    currentCharacter.setCurrentHealth(ui.inputHP->text().toInt());
+   // currentCharacter.setRace(ui.inputRace->currentText().)
+   // int race = ui.inputRace->currentIndex();
+    //QString profession = ui.inputProfession->currentText();
+    currentCharacter.setArmor(ui.inputArmor->text().toInt());
+    currentCharacter.setAttackPotential(ui.inputAttack->text().toInt());
+    currentCharacter.setEvadePotential(ui.inputEvasion->text().toInt());
+    currentCharacter.setMagical(ui.checkBoxIsMagical->isChecked());
+    currentCharacter.setSorceryPotential(ui.inputSorcery->text().toInt());
+    currentCharacter.getWeapon().setName(ui.inputWeaponName->text().toStdString());
+    currentCharacter.getWeapon().setDamage(ui.inputWeaponDamage->text().toInt());
+    currentCharacter.setDescription(ui.inputBackstory->toPlainText().toStdString());
 
+    /*
     QFile file("character.txt");
     file.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream out(&file);
@@ -73,5 +80,5 @@ void GM_Util_Tool::on_buttonSave_clicked() {
     out << backstory << "\n";
 
     file.close();
-
+    */
 }
