@@ -1,7 +1,10 @@
 #pragma once
 #include <string>
+
 class Weapon
 {
+	
+	friend class PlayableCharacter;
 protected:	
 	std::string name = "";
 	int damage = 0;
