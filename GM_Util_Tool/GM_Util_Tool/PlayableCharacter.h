@@ -3,7 +3,7 @@
 #include <string>
 
 enum CharacterRace{human,elf,dwarf,halfling,gnome,vran,werebbubb};
-enum CharacterClass{bard,craftsman,criminal,doctor,druid,mage,man_at_arms,merchant,priest,witcher};
+enum CharacterClass{bard,craftsman,criminal,doctor,druid,mage,man_at_arms,merchant,noble,priest,witcher};
 
 class PlayableCharacter :
     public Entity
