@@ -2,8 +2,8 @@
 #include "Entity.h"
 #include <string>
 
-enum CharacterRace{human,elf,dwarf,halfling,gnome,vran,werebbubb};
-enum CharacterClass{bard,craftsman,criminal,doctor,druid,mage,man_at_arms,merchant,noble,priest,witcher};
+enum CharacterRace{human,werebbubb,elf,gnome,dwarf,halfling,vran};
+enum CharacterClass{bard,mage,druid,priest,merchant,doctor,criminal,craftsman,noble,witcher,man_at_arms};
 
 class PlayableCharacter :
     public Entity
