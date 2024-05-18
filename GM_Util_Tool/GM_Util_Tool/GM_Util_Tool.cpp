@@ -1,4 +1,7 @@
 ﻿#include "GM_Util_Tool.h"
+#include <string> 
+#include <QString>
+#include <iostream>
 
 GM_Util_Tool::GM_Util_Tool(QWidget *parent)
     : QMainWindow(parent)
@@ -43,9 +46,9 @@ void GM_Util_Tool::on_buttonAvatarChoice_clicked() {
 
 void GM_Util_Tool::on_buttonSave_clicked() {
     newTeam.addCharacter();
-    
+
     PlayableCharacter currentCharacter = newTeam.getCharacter(newTeam.getTeamSize() - 1);
-    
+
     currentCharacter.setName(ui.inputName->text().toStdString());
     currentCharacter.setMaxHealth(ui.inputHP->text().toInt());
     currentCharacter.setCurrentHealth(ui.inputHP->text().toInt());
@@ -57,6 +60,7 @@ void GM_Util_Tool::on_buttonSave_clicked() {
     currentCharacter.getWeapon().setName(ui.inputWeaponName->text().toStdString());
     currentCharacter.getWeapon().setDamage(ui.inputWeaponDamage->text().toInt());
     currentCharacter.setDescription(ui.inputBackstory->toPlainText().toStdString());
+
     int race = ui.inputRace->currentIndex();
     switch (race) {
     case 1:
@@ -81,6 +85,7 @@ void GM_Util_Tool::on_buttonSave_clicked() {
         currentCharacter.setRace(vran);
         break;
     }
+
     int profession = ui.inputProfession->currentIndex();
     switch (profession) {
     case 1:
@@ -105,7 +110,7 @@ void GM_Util_Tool::on_buttonSave_clicked() {
         currentCharacter.setClass(criminal);
         break;
     case 8:
-        currentCharacter.setClass(merchant);
+        currentCharacter.setClass(craftsman);
         break;
     case 9:
         currentCharacter.setClass(noble);
@@ -117,4 +122,6 @@ void GM_Util_Tool::on_buttonSave_clicked() {
         currentCharacter.setClass(man_at_arms);
         break;
     }
+
+    //currentCharacter.saveToBinaryFile("save");
 }

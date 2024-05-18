@@ -193,7 +193,17 @@
             </item>
             <item>
              <property name="text">
+              <string>Bobołak</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
               <string>Elf</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gnom</string>
              </property>
             </item>
             <item>
@@ -208,17 +218,7 @@
             </item>
             <item>
              <property name="text">
-              <string>Gnom</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
               <string>Vran</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Bobołak</string>
              </property>
             </item>
            </widget>
