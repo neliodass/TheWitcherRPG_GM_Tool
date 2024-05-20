@@ -64,5 +64,5 @@ void GM_Util_Tool::on_buttonSave_clicked() {
     currentCharacter.setDescription(ui.inputBackstory->toPlainText().toStdString());
     currentCharacter.setRace((CharacterRace)ui.inputRace->currentIndex());
     currentCharacter.setClass((CharacterClass)ui.inputProfession->currentIndex());
-    //currentCharacter.saveToBinaryFile("save");
+    currentCharacter.saveToBinaryFile("save.bin");
 }
