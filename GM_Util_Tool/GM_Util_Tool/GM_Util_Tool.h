@@ -16,6 +16,7 @@ public:
 
 public slots:
     void on_buttonAvatarChoice_clicked();
+    void createCharacterWidgets();
     void on_buttonSave_clicked();
 
 private:

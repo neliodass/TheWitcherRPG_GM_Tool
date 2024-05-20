@@ -2,6 +2,7 @@
 #include <string> 
 #include <QString>
 #include <iostream>
+#include "CharacterListWidget.h"
 
 GM_Util_Tool::GM_Util_Tool(QWidget *parent)
     : QMainWindow(parent)
@@ -9,6 +10,7 @@ GM_Util_Tool::GM_Util_Tool(QWidget *parent)
     ui.setupUi(this);
     ui.labelSorcery->setVisible(false);
     ui.inputSorcery->setVisible(false);
+    
 }
 
 GM_Util_Tool::~GM_Util_Tool()
@@ -43,7 +45,27 @@ void GM_Util_Tool::on_buttonAvatarChoice_clicked() {
         }
     }
 }
+void GM_Util_Tool::createCharacterWidgets()
+{
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui.scrollAreaWidgetContents->layout());
+    while (QLayoutItem* item = layout->takeAt(0)) {
+        if (item->widget()) {
+            item->widget()->deleteLater();
+        }
+       
+        delete item;
+    }
 
+    if (newTeam.getTeamSize() > 0) {
+        for (int i = 1; i <= newTeam.getTeamSize(); ++i) {
+            PlayableCharacter& current = newTeam.getCharacter(i);
+            // Tworzenie nowych widżetów CharacterWidget
+            CharacterListWidget* widget = new CharacterListWidget(QString(QString::fromStdString(current.getName())),
+                QString(QString::fromStdString(current.getName())), this);
+            layout->addWidget(widget);
+        }
+    }
+}
 void GM_Util_Tool::on_buttonSave_clicked() {
     newTeam.addCharacter();
 
@@ -64,5 +86,6 @@ void GM_Util_Tool::on_buttonSave_clicked() {
     currentCharacter.setDescription(ui.inputBackstory->toPlainText().toStdString());
     currentCharacter.setRace((CharacterRace)ui.inputRace->currentIndex());
     currentCharacter.setClass((CharacterClass)ui.inputProfession->currentIndex());
+    createCharacterWidgets();
     //currentCharacter.saveToBinaryFile("save");
 }
