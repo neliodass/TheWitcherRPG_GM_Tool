@@ -2,13 +2,29 @@
 #include<iostream>
 #include<fstream>
 
-
 PlayableCharacter::PlayableCharacter(CharacterRace characterRace, CharacterClass characterClass, const int age, const std::string description)
 {
 	this->characterRace = characterRace;
 	this->characterClass = characterClass;
 	this->age = age;
 	this->description = description;
+}
+auto PlayableCharacter::getClassString() const -> const std::string
+{
+	switch (this->getClass())
+	{
+	case 0: return "Bard";
+	case 1: return "Czarodziej";
+	case 2: return "Druid";
+	case 3: return "Kap³an";
+	case 4: return "Kupiec";
+	case 5: return "Medyk";
+	case 6: return "Przestêpca";
+	case 7: return "Rzemieœlnik";
+	case 8: return "Szlachcic";
+	case 9: return "WiedŸmin";
+	case 10: return "Zbrojny";
+	}
 }
 void PlayableCharacter::saveToBinaryFile(const std::string& filename)
 {

@@ -22,6 +22,7 @@ class PlayableCharacter :
         inline void setDescription(const std::string description) { this->description = description; }
         auto getRace() const -> const CharacterRace { return characterRace; }
         auto getClass() const -> const CharacterClass { return characterClass; }
+        auto getClassString()const -> const std::string;
         auto getAge() const -> const int { return age; }
         auto getDescription() const -> const std::string { return description; }
         void saveToBinaryFile(const std::string& filename);

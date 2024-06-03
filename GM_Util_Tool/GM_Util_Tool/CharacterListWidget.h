@@ -1,11 +1,11 @@
 #pragma once
 #ifndef CHARACTERWIDGET_H
 #define CHARACTERWIDGET_H
-#include <QWidget>
+#include <QFrame>
 class QLabel;
 class QVBoxLayout;
 class CharacterListWidget :
-    public QWidget
+    public QFrame
 {
     Q_OBJECT
 

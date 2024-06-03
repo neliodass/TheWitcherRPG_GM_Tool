@@ -48,21 +48,28 @@ void GM_Util_Tool::on_buttonAvatarChoice_clicked() {
 void GM_Util_Tool::createCharacterWidgets()
 {
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui.scrollAreaWidgetContents->layout());
-    while (QLayoutItem* item = layout->takeAt(0)) {
-        if (item->widget()) {
-            item->widget()->deleteLater();
+    if (layout) {
+        int count = layout->count();
+        for (int i = count - 1; i >= 0; --i) {
+            QLayoutItem* item = layout->itemAt(i);
+            if (item) {
+                QWidget* widget = item->widget();
+                if (widget && !dynamic_cast<QSpacerItem*>(item->spacerItem())) {
+                    widget->deleteLater();
+                }
+            }
         }
-       
-        delete item;
     }
 
     if (newTeam.getTeamSize() > 0) {
         for (int i = 1; i <= newTeam.getTeamSize(); ++i) {
             PlayableCharacter& current = newTeam.getCharacter(i);
             // Tworzenie nowych widżetów CharacterWidget
-            CharacterListWidget* widget = new CharacterListWidget(QString(QString::fromStdString(current.getName())),
-                QString(QString::fromStdString(current.getName())), this);
-            layout->addWidget(widget);
+            CharacterListWidget* widget = new CharacterListWidget(
+                QString(QString::fromStdString(current.getName())),
+                QString(QString::fromStdString(current.getClassString())), this);
+            
+            layout->insertWidget(i-1,widget);
         }
     }
 }
