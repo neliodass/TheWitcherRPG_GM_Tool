@@ -64,35 +64,75 @@ void GM_Util_Tool::createCharacterWidgets()
     if (newTeam.getTeamSize() > 0) {
         for (int i = 1; i <= newTeam.getTeamSize(); ++i) {
             PlayableCharacter& current = newTeam.getCharacter(i);
-            // Tworzenie nowych widżetów CharacterWidget
             CharacterListWidget* widget = new CharacterListWidget(
+                current,
                 QString(QString::fromStdString(current.getName())),
                 QString(QString::fromStdString(current.getClassString())), this);
-            
+            QObject::connect(widget,&CharacterListWidget::clicked,this,&GM_Util_Tool::loadCharacterForEdit);
             layout->insertWidget(i-1,widget);
         }
     }
 }
 void GM_Util_Tool::on_buttonSave_clicked() {
-    newTeam.addCharacter();
-
-    PlayableCharacter& currentCharacter = newTeam.getCharacter(newTeam.getTeamSize());
-
-    currentCharacter.setName(ui.inputName->text().toStdString());
-    currentCharacter.setMaxHealth(ui.inputHP->text().toInt());
-    currentCharacter.setCurrentHealth(ui.inputHP->text().toInt());
-    currentCharacter.setArmor(ui.inputArmor->text().toInt());
-    currentCharacter.setAttackPotential(ui.inputAttack->text().toInt());
-    currentCharacter.setEvadePotential(ui.inputEvasion->text().toInt());
-    currentCharacter.setMagical(ui.checkBoxIsMagical->isChecked());
-    if (ui.checkBoxIsMagical->isChecked()) {
-    currentCharacter.setSorceryPotential(ui.inputSorcery->text().toInt());
+    PlayableCharacter* currentCharacter;
+    if (isCharacterLoaded) {
+         currentCharacter = currentlyEditing;
     }
-    currentCharacter.getWeapon().setName(ui.inputWeaponName->text().toStdString());
-    currentCharacter.getWeapon().setDamage(ui.inputWeaponDamage->text().toInt());
-    currentCharacter.setDescription(ui.inputBackstory->toPlainText().toStdString());
-    currentCharacter.setRace((CharacterRace)ui.inputRace->currentIndex());
-    currentCharacter.setClass((CharacterClass)ui.inputProfession->currentIndex());
+    else {
+        newTeam.addCharacter();
+        currentCharacter = &newTeam.getCharacter(newTeam.getTeamSize());
+    }
+    
+    currentCharacter->setName(ui.inputName->text().toStdString());
+    ui.inputName->clear();
+    currentCharacter->setMaxHealth(ui.inputHP->text().toInt());
+    currentCharacter->setCurrentHealth(ui.inputHP->text().toInt());
+    ui.inputHP->clear();
+    currentCharacter->setArmor(ui.inputArmor->text().toInt());
+    ui.inputArmor->clear();
+    currentCharacter->setAttackPotential(ui.inputAttack->text().toInt());
+    ui.inputAttack->clear();
+    currentCharacter->setEvadePotential(ui.inputEvasion->text().toInt());
+    ui.inputEvasion->clear();
+    currentCharacter->setMagical(ui.checkBoxIsMagical->isChecked());
+    if (ui.checkBoxIsMagical->isChecked()) {
+    currentCharacter->setSorceryPotential(ui.inputSorcery->text().toInt());
+    }
+    ui.checkBoxIsMagical->setChecked(false);
+    ui.inputSorcery->clear();
+    currentCharacter->getWeapon().setName(ui.inputWeaponName->text().toStdString());
+    ui.inputWeaponName->clear();
+    currentCharacter->getWeapon().setDamage(ui.inputWeaponDamage->text().toInt());
+    ui.inputWeaponDamage->clear();
+    currentCharacter->setDescription(ui.inputBackstory->toPlainText().toStdString());
+    ui.inputBackstory->clear();
+    currentCharacter->setRace((CharacterRace)ui.inputRace->currentIndex());
+    ui.inputRace->setCurrentIndex(0);
+    currentCharacter->setClass((CharacterClass)ui.inputProfession->currentIndex());
+    ui.inputProfession->setCurrentIndex(0);
+    isCharacterLoaded = false;
     createCharacterWidgets();
     //currentCharacter.saveToBinaryFile("save");
+}
+
+void GM_Util_Tool::loadCharacterForEdit( PlayableCharacter& widgetCharacter)
+{
+    ui.inputName->setText(QString::fromStdString(widgetCharacter.getName()));
+    ui.inputHP->setText(QString::number(widgetCharacter.getMaxHealth()));
+    ui.inputArmor->setText(QString::number(widgetCharacter.getArmor()));
+    ui.inputAttack->setText(QString::number(widgetCharacter.getAttackPotential()));
+    ui.inputEvasion->setText(QString::number(widgetCharacter.getEvadePotential()));
+    if(widgetCharacter.isMagical()){
+        ui.checkBoxIsMagical->setChecked(true);
+        ui.inputSorcery->setText(QString::number(widgetCharacter.getSorceryPotential()));
+    }
+    else ui.checkBoxIsMagical->setChecked(false);
+    ui.inputWeaponName->setText(QString::fromStdString(widgetCharacter.getWeapon().getName()));
+    ui.inputWeaponDamage->setText(QString::number(widgetCharacter.getWeapon().getDamage()));
+    ui.inputBackstory->setText(QString::fromStdString(widgetCharacter.getDescription()));
+    ui.inputRace->setCurrentIndex(widgetCharacter.getRace());
+    ui.inputProfession->setCurrentIndex(widgetCharacter.getClass());
+    isCharacterLoaded = true;
+    currentlyEditing = &widgetCharacter;
+    
 }

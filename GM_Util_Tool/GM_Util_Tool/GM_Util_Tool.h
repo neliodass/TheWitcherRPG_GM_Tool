@@ -18,9 +18,13 @@ public slots:
     void on_buttonAvatarChoice_clicked();
     void createCharacterWidgets();
     void on_buttonSave_clicked();
+    void loadCharacterForEdit( PlayableCharacter& widgetCharacter);
 
 private:
     Ui::GM_Util_ToolClass ui;
     Team newTeam;
     QString avatarPath = "";
+    bool isCharacterLoaded = false;
+    
+    PlayableCharacter* currentlyEditing;
 };

@@ -1,13 +1,17 @@
 #include "CharacterListWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
+#include"PlayableCharacter.h"
+#include<iostream>
 
-CharacterListWidget::CharacterListWidget(const QString& characterName, const QString& professionName, QWidget* parent)
+CharacterListWidget::CharacterListWidget(PlayableCharacter& widgetCharacter, const QString& characterName, const QString& professionName, QWidget* parent)
     : QFrame(parent),
+    widgetCharacter(widgetCharacter),
     characterNameLabel(new QLabel(characterName, this)),
     professionNameLabel(new QLabel(professionName, this)),
     layout(new QVBoxLayout(this))
 {
+    
     this->setFrameShape(QFrame::Box);
     this->setLineWidth(2);
     this->setMinimumSize(QSize(0,65));
@@ -22,4 +26,9 @@ CharacterListWidget::CharacterListWidget(const QString& characterName, const QSt
     layout->addWidget(characterNameLabel);
     layout->addWidget(professionNameLabel);
     setLayout(layout);
+}
+
+void CharacterListWidget::onWidgetClicked()
+{
+    std::cout << widgetCharacter.getName();
 }
