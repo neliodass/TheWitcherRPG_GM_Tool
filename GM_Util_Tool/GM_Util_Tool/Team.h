@@ -12,6 +12,7 @@ public:
 	PlayableCharacter& getCharacter(int characterId);
 	void saveToBinaryFile(const std::string& filename);
 	void readFromBinaryFile(const std::string& filename);
+	void removeCharacter(int toRemove);
 	
 };
 

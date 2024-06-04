@@ -23,6 +23,7 @@ public slots:
     void on_readTeamFileButton_clicked();
     void on_buttonDeleteAvatar_clicked();
     void clearUi();
+    void on_buttonDelete_clicked();
    
 
 private:

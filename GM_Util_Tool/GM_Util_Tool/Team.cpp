@@ -59,3 +59,12 @@ void Team::readFromBinaryFile(const std::string& filename) {
 	 std::cerr << "Nie mo¿na otworzyæ pliku binarnego.\n";
  }
  }
+
+void Team::removeCharacter(int toRemove)
+{
+	int indexToRemove = toRemove - 1;
+	if (indexToRemove >= 0 && indexToRemove < team.size())
+	{
+		team.erase(team.begin() + indexToRemove);
+	}
+}

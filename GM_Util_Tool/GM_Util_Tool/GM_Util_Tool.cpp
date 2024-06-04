@@ -55,6 +55,7 @@ void GM_Util_Tool::createCharacterWidgets()
     if (newTeam.getTeamSize() > 0) {
         for (int i = 1; i <= newTeam.getTeamSize(); ++i) {
             PlayableCharacter& current = newTeam.getCharacter(i);
+            current.setTempId(i);
             CharacterListWidget* widget = new CharacterListWidget(
                 current,
                 QString(QString::fromStdString(current.getName())),
@@ -195,4 +196,18 @@ void GM_Util_Tool::clearUi()
     ui.inputBackstory->clear();
     ui.inputRace->setCurrentIndex(0);
     ui.inputProfession->setCurrentIndex(0);
+}
+
+void GM_Util_Tool::on_buttonDelete_clicked()
+{
+    if (isCharacterLoaded) {
+        newTeam.removeCharacter(currentlyEditing->getTempId());
+        isCharacterLoaded = false;
+        currentlyEditing = nullptr;
+        clearUi();
+        createCharacterWidgets();
+    }
+    
+
+
 }
