@@ -28,7 +28,7 @@ class Entity
 		inline void setArmor(const int armor) { this->armor = armor; }
 		inline void setEvadePotential(const int evadePotential) { this->evadePotential = evadePotential; }
 		inline void setAttackPotential(const int attackPotential) { this->attackPotential = attackPotential; }
-		inline void setSorceryPotential(const int sorceryPotential) { this->attackPotential = sorceryPotential; }
+		inline void setSorceryPotential(const int sorceryPotential) { this->sorceryPotential = sorceryPotential; }
 		inline void setWeapon(const Weapon weapon) { this->weapon = weapon; }
 		inline void setAlive(const bool alive) { this->alive = alive; }
 		inline void setMagical(const bool magical) { this->magical = magical; }
@@ -42,7 +42,7 @@ class Entity
 		inline auto getEvadePotential() const -> const int { return evadePotential; }
 		inline auto getAttackPotential() const -> const int { return attackPotential; }
 		inline auto getSorceryPotential() const -> const int { return sorceryPotential; }
-		inline auto getWeapon()  ->  Weapon& { return weapon; }
+		inline auto getWeapon()   ->   Weapon& { return weapon; }
 		inline auto isAlive() const -> const bool { return alive; }
 		inline auto isMagical() const -> const bool { return magical; }
 		void takeDamage(int damage);

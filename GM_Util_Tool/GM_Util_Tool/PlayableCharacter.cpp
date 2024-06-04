@@ -2,13 +2,29 @@
 #include<iostream>
 #include<fstream>
 
-
-PlayableCharacter::PlayableCharacter(CharacterRace characterRace, CharacterClass characterClass, const int age, const std::string description)
+PlayableCharacter::PlayableCharacter(CharacterRace characterRace, CharacterClass characterClass, const int age, const std::string description) :characterImage()
 {
 	this->characterRace = characterRace;
 	this->characterClass = characterClass;
 	this->age = age;
 	this->description = description;
+}
+auto PlayableCharacter::getClassString() const -> const std::string
+{
+	switch (this->getClass())
+	{
+	case 0: return "Bard";
+	case 1: return "Czarodziej";
+	case 2: return "Druid";
+	case 3: return "Kap³an";
+	case 4: return "Kupiec";
+	case 5: return "Medyk";
+	case 6: return "Przestêpca";
+	case 7: return "Rzemieœlnik";
+	case 8: return "Szlachcic";
+	case 9: return "WiedŸmin";
+	case 10: return "Zbrojny";
+	}
 }
 void PlayableCharacter::saveToBinaryFile(const std::string& filename)
 {
@@ -35,6 +51,25 @@ void PlayableCharacter::saveToBinaryFile(const std::string& filename)
 		length = description.size();
 		file.write(reinterpret_cast<const char*>(&length), sizeof(length));
 		file.write(description.c_str(), length);
+		if (!characterImage.isNull()) {
+			int imageWidth = characterImage.width();
+			int imageHeight = characterImage.height();
+			QImage::Format imageFormat = characterImage.format();
+			int bytesPerLine = characterImage.bytesPerLine();
+			QByteArray imageData(reinterpret_cast<const char*>(characterImage.bits()), characterImage.sizeInBytes());
+			int imageDataSize = imageData.size();
+			file.write(reinterpret_cast<const char*>(&imageDataSize), sizeof(imageDataSize));
+			file.write(imageData.data(), imageDataSize);
+			file.write(reinterpret_cast<const char*>(&imageWidth), sizeof(imageWidth));
+			file.write(reinterpret_cast<const char*>(&imageHeight), sizeof(imageHeight));
+			int imageFormatInt = static_cast<int>(imageFormat);
+			file.write(reinterpret_cast<const char*>(&imageFormatInt), sizeof(imageFormatInt));
+			file.write(reinterpret_cast<const char*>(&bytesPerLine), sizeof(bytesPerLine));
+		}
+		else {
+			int imageDataSize = 0;
+			file.write(reinterpret_cast<const char*>(&imageDataSize), sizeof(imageDataSize));
+		}
 		file.close();
 		std::cout << "Dane zapisane do pliku binarnego.\n";
 	}
@@ -76,7 +111,25 @@ void PlayableCharacter::readFromBinaryFile(std::ifstream& file) {
 		buffer[length] = '\0';
 		description = std::string(buffer);
 		delete[] buffer;
-	
+		int imageWidth, imageHeight, bytesPerLine, imageFormatInt, imageDataSize;
+		file.read(reinterpret_cast<char*>(&imageDataSize), sizeof(imageDataSize));
+		
+
+		if (imageDataSize > 0) {
+			QByteArray imageData;
+			imageData.resize(imageDataSize);
+			file.read(imageData.data(), imageDataSize);
+			file.read(reinterpret_cast<char*>(&imageWidth), sizeof(imageWidth));
+			file.read(reinterpret_cast<char*>(&imageHeight), sizeof(imageHeight));
+			file.read(reinterpret_cast<char*>(&imageFormatInt), sizeof(imageFormatInt));
+			file.read(reinterpret_cast<char*>(&bytesPerLine), sizeof(bytesPerLine));
+			
+			
+			QImage::Format imageFormat = static_cast<QImage::Format>(imageFormatInt);
+			QImage characterImage(reinterpret_cast<const uchar*>(imageData.data()), imageWidth, imageHeight, bytesPerLine, imageFormat);
+			characterImage.detach(); 
+			this->characterImage = characterImage;
+		}
 		//TODO oblusga bledu
 	}
 	else {

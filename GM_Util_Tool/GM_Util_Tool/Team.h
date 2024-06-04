@@ -4,7 +4,7 @@
 class Team
 {
 	std::vector<PlayableCharacter> team;
-	int playersAmount = 0;
+
 public:
 	void addCharacter();
 	void addCharacter(PlayableCharacter newPlayer);
@@ -12,6 +12,7 @@ public:
 	PlayableCharacter& getCharacter(int characterId);
 	void saveToBinaryFile(const std::string& filename);
 	void readFromBinaryFile(const std::string& filename);
+	void removeCharacter(int toRemove);
 	
 };
 
