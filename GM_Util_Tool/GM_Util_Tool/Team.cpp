@@ -40,12 +40,14 @@ int Team::getTeamSize()
 	 }
  }
 void Team::readFromBinaryFile(const std::string& filename) {
+	team.clear();
  std::ifstream file(filename, std::ios::binary);
  if (file.is_open()) {
 	 int length = team.size();
 	 file.read(reinterpret_cast<char*>(&length), sizeof(length));
 	 PlayableCharacter e1;
 	 for (int i = 0; i < length;i++) {
+		 PlayableCharacter e1;
 		 e1.readFromBinaryFile(file);
 		 this->addCharacter(e1);
 	 }

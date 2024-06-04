@@ -32,7 +32,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="teamCreator">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -40,16 +40,34 @@
         </sizepolicy>
        </property>
        <attribute name="title">
-        <string>Tab 1</string>
+        <string>Kreator Teamu</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_7" columnstretch="70,30">
+       <layout class="QGridLayout" name="gridLayout_7" columnstretch="70,0">
         <property name="sizeConstraint">
          <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
         </property>
         <property name="horizontalSpacing">
          <number>18</number>
         </property>
-        <item row="0" column="1">
+        <item row="2" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QPushButton" name="readTeamFileButton">
+            <property name="text">
+             <string>Wczytaj team</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="saveTeamFileButton">
+            <property name="text">
+             <string>Zapisz team</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="1">
          <widget class="QScrollArea" name="characterListArea">
           <property name="enabled">
            <bool>true</bool>
@@ -83,11 +101,11 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>213</width>
-             <height>460</height>
+             <width>166</width>
+             <height>428</height>
             </rect>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
+           <layout class="QVBoxLayout" name="verticalLayout_3" stretch="20">
             <item>
              <spacer name="verticalSpacer">
               <property name="orientation">
@@ -105,7 +123,7 @@
           </widget>
          </widget>
         </item>
-        <item row="0" column="0">
+        <item row="1" column="0" rowspan="2">
          <widget class="QFrame" name="frameCharacterCreator">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -125,7 +143,7 @@
           <property name="midLineWidth">
            <number>0</number>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,0,1">
+          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,8,1">
            <property name="sizeConstraint">
             <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
            </property>
@@ -401,11 +419,48 @@
                   <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
                  </property>
                  <item>
-                  <widget class="QPushButton" name="buttonAvatarChoice">
-                   <property name="text">
-                    <string>Wybierz awatar</string>
-                   </property>
-                  </widget>
+                  <layout class="QVBoxLayout" name="verticalLayout_4">
+                   <item>
+                    <spacer name="verticalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Orientation::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="buttonAvatarChoice">
+                     <property name="text">
+                      <string>Wybierz awatar</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="buttonDeleteAvatar">
+                     <property name="text">
+                      <string>Usuń awatar</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_3">
+                     <property name="orientation">
+                      <enum>Qt::Orientation::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
                  </item>
                  <item>
                   <widget class="QFrame" name="frameAvatar">
@@ -431,7 +486,7 @@
                     <number>2</number>
                    </property>
                    <layout class="QGridLayout" name="gridLayout_4">
-                    <item row="0" column="0">
+                    <item row="0" column="2">
                      <widget class="QLabel" name="avatar">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -472,6 +527,13 @@
                </item>
                <item>
                 <layout class="QGridLayout" name="gridLayout_2">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="labelBackstory">
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Historia postaci&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="1" column="0">
                   <widget class="QTextEdit" name="inputBackstory">
                    <property name="sizePolicy">
@@ -482,13 +544,6 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="labelBackstory">
-                   <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Historia postaci&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                  </widget>
-                 </item>
                 </layout>
                </item>
               </layout>
@@ -496,28 +551,88 @@
             </layout>
            </item>
            <item>
-            <widget class="QPushButton" name="buttonSave">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
+            <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="48,4,48">
+             <property name="leftMargin">
+              <number>20</number>
              </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>30</height>
-              </size>
+             <property name="rightMargin">
+              <number>20</number>
              </property>
-             <property name="text">
-              <string>Zapisz</string>
-             </property>
-            </widget>
+             <item>
+              <widget class="QPushButton" name="buttonSave">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Zapisz</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="buttonDelete">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Usuń</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>
         </item>
        </layout>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Battle tracker</string>
+       </attribute>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>140</y>
+          <width>331</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>In progress</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -526,7 +641,6 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>buttonAvatarChoice</tabstop>
   <tabstop>inputName</tabstop>
   <tabstop>inputAge</tabstop>
   <tabstop>inputRace</tabstop>

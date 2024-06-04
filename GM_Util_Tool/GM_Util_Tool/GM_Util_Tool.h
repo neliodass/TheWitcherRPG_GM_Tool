@@ -19,6 +19,11 @@ public slots:
     void createCharacterWidgets();
     void on_buttonSave_clicked();
     void loadCharacterForEdit( PlayableCharacter& widgetCharacter);
+    void on_saveTeamFileButton_clicked();
+    void on_readTeamFileButton_clicked();
+    void on_buttonDeleteAvatar_clicked();
+    void clearUi();
+   
 
 private:
     Ui::GM_Util_ToolClass ui;
@@ -26,5 +31,5 @@ private:
     QString avatarPath = "";
     bool isCharacterLoaded = false;
     
-    PlayableCharacter* currentlyEditing;
+    PlayableCharacter* currentlyEditing = nullptr;
 };
