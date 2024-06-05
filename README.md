@@ -7,4 +7,4 @@ Tool for game masters of The Witcher RPG
 - Battle tracker (to do)
 - Loot randomizer (to do)
 
-![screenshot](ToolScreenshot.png)
+![screenshot](ToolGif.gif)
