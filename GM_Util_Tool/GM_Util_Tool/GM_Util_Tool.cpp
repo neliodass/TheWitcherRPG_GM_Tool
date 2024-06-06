@@ -3,15 +3,20 @@
 #include <QString>
 #include <iostream>
 #include "CharacterListWidget.h"
+#include "ui_stylization.h"
 
-GM_Util_Tool::GM_Util_Tool(QWidget *parent)
+GM_Util_Tool::GM_Util_Tool(QWidget* parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
     ui.labelSorcery->setVisible(false);
     ui.inputSorcery->setVisible(false);
     ui.buttonDelete->setDisabled(true);
-    
+}
+
+void GM_Util_Tool::set_style() {
+    ui.buttonAvatarChoice->setStyleSheet(standardButton);
+    ui.buttonDeleteAvatar->setStyleSheet(standardButton);
 }
 
 GM_Util_Tool::~GM_Util_Tool()
@@ -70,7 +75,6 @@ void GM_Util_Tool::on_buttonSave_clicked() {
     PlayableCharacter* currentCharacter;
     if (isCharacterLoaded) {
          currentCharacter = currentlyEditing;
-         
     }
     else {
         newTeam.addCharacter();

@@ -44,7 +44,7 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_7" columnstretch="70,0">
         <property name="sizeConstraint">
-         <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+         <enum>QLayout::SetDefaultConstraint</enum>
         </property>
         <property name="horizontalSpacing">
          <number>18</number>
@@ -79,19 +79,19 @@
            </sizepolicy>
           </property>
           <property name="layoutDirection">
-           <enum>Qt::LayoutDirection::LeftToRight</enum>
+           <enum>Qt::LeftToRight</enum>
           </property>
           <property name="horizontalScrollBarPolicy">
-           <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+           <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
           <property name="sizeAdjustPolicy">
-           <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
           </property>
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
           <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignCenter</set>
+           <set>Qt::AlignCenter</set>
           </property>
           <widget class="QWidget" name="scrollAreaWidgetContents">
            <property name="enabled">
@@ -107,9 +107,9 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3" stretch="20">
             <item>
-             <spacer name="verticalSpacer">
+             <spacer name="verticalSpacerTeamList">
               <property name="orientation">
-               <enum>Qt::Orientation::Vertical</enum>
+               <enum>Qt::Vertical</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -132,10 +132,10 @@
            </sizepolicy>
           </property>
           <property name="frameShape">
-           <enum>QFrame::Shape::StyledPanel</enum>
+           <enum>QFrame::StyledPanel</enum>
           </property>
           <property name="frameShadow">
-           <enum>QFrame::Shadow::Sunken</enum>
+           <enum>QFrame::Sunken</enum>
           </property>
           <property name="lineWidth">
            <number>1</number>
@@ -145,7 +145,7 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,8,1">
            <property name="sizeConstraint">
-            <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
+            <enum>QLayout::SetNoConstraint</enum>
            </property>
            <item>
             <widget class="QLabel" name="windowName">
@@ -163,7 +163,7 @@
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
              <property name="sizeConstraint">
-              <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+              <enum>QLayout::SetDefaultConstraint</enum>
              </property>
              <property name="topMargin">
               <number>10</number>
@@ -411,19 +411,19 @@
                 <number>14</number>
                </property>
                <property name="sizeConstraint">
-                <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+                <enum>QLayout::SetDefaultConstraint</enum>
                </property>
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout">
                  <property name="sizeConstraint">
-                  <enum>QLayout::SizeConstraint::SetNoConstraint</enum>
+                  <enum>QLayout::SetNoConstraint</enum>
                  </property>
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_4">
                    <item>
-                    <spacer name="verticalSpacer_2">
+                    <spacer name="verticalSpacerAvatarTop">
                      <property name="orientation">
-                      <enum>Qt::Orientation::Vertical</enum>
+                      <enum>Qt::Vertical</enum>
                      </property>
                      <property name="sizeHint" stdset="0">
                       <size>
@@ -443,14 +443,14 @@
                    <item>
                     <widget class="QPushButton" name="buttonDeleteAvatar">
                      <property name="text">
-                      <string>Usuń awatar</string>
+                      <string>Usun awatar</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <spacer name="verticalSpacer_3">
+                    <spacer name="verticalSpacerAvatarBottom">
                      <property name="orientation">
-                      <enum>Qt::Orientation::Vertical</enum>
+                      <enum>Qt::Vertical</enum>
                      </property>
                      <property name="sizeHint" stdset="0">
                       <size>
@@ -477,10 +477,10 @@
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::Panel</enum>
+                    <enum>QFrame::Panel</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Shadow::Sunken</enum>
+                    <enum>QFrame::Sunken</enum>
                    </property>
                    <property name="lineWidth">
                     <number>2</number>
@@ -519,7 +519,7 @@
                        </size>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::Shape::NoFrame</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <property name="text">
                        <string/>
@@ -528,7 +528,7 @@
                        <bool>false</bool>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignCenter</set>
+                       <set>Qt::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -590,9 +590,9 @@
               </widget>
              </item>
              <item>
-              <spacer name="horizontalSpacer">
+              <spacer name="horizontalSpacerCharacterButtons">
                <property name="orientation">
-                <enum>Qt::Orientation::Horizontal</enum>
+                <enum>Qt::Horizontal</enum>
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
