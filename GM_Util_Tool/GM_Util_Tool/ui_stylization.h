@@ -7,4 +7,5 @@
 
 extern QString buttonsAvatar;
 extern QString standardButton;
+extern QString CharacterList;
 #endif
