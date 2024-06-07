@@ -15,8 +15,28 @@ GM_Util_Tool::GM_Util_Tool(QWidget* parent)
 }
 
 void GM_Util_Tool::set_style() {
-    ui.buttonAvatarChoice->setStyleSheet(standardButton);
-    ui.buttonDeleteAvatar->setStyleSheet(standardButton);
+    ui.buttonAvatarChoice->setStyleSheet(buttonAvatar);
+    ui.buttonDeleteAvatar->setStyleSheet(buttonAvatar);
+    ui.buttonDelete->setStyleSheet(buttonCharacter);
+    ui.buttonSave->setStyleSheet(buttonCharacter);
+    ui.readTeamFileButton->setStyleSheet(buttonTeam);
+    ui.saveTeamFileButton->setStyleSheet(buttonTeam);
+    ui.tabWidget->setStyleSheet(tab);
+    //this->setStyleSheet(mainBackground);
+    ui.labelAge->setStyleSheet(normalLabel);
+    ui.labelArmor->setStyleSheet(normalLabel);
+    ui.labelAttack->setStyleSheet(normalLabel);
+    ui.labelBackstory->setStyleSheet(normalLabel);
+    ui.labelEvasion->setStyleSheet(normalLabel);
+    ui.labelHP->setStyleSheet(normalLabel);
+    ui.labelK6->setStyleSheet(normalLabel);
+    ui.labelName->setStyleSheet(normalLabel);
+    ui.labelProfession->setStyleSheet(normalLabel);
+    ui.labelRace->setStyleSheet(normalLabel);
+    ui.labelSorcery->setStyleSheet(normalLabel);
+    ui.labelWeaponDamage->setStyleSheet(normalLabel);
+    ui.labelWeaponName->setStyleSheet(normalLabel);
+    ui.labelTitle->setStyleSheet(titleLabel);
 }
 
 GM_Util_Tool::~GM_Util_Tool()

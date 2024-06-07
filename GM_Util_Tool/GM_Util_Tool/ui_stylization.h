@@ -5,7 +5,13 @@
 
 #include <QString>
 
-extern QString buttonsAvatar;
-extern QString standardButton;
+extern QString buttonAvatar;
 extern QString CharacterList;
+extern QString buttonCharacter;
+extern QString buttonTeam;
+extern QString tab;
+extern QString mainBackground;
+extern QString normalLabel;
+extern QString titleLabel;
+
 #endif

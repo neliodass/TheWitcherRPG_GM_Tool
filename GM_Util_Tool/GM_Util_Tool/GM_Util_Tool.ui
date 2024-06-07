@@ -148,7 +148,7 @@
             <enum>QLayout::SetNoConstraint</enum>
            </property>
            <item>
-            <widget class="QLabel" name="windowName">
+            <widget class="QLabel" name="labelTitle">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -617,7 +617,7 @@
                 </size>
                </property>
                <property name="text">
-                <string>Usuń</string>
+                <string>Usun</string>
                </property>
               </widget>
              </item>

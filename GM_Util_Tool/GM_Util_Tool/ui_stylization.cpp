@@ -2,24 +2,7 @@
 #include <QtWidgets>
 #include <QString>
 
-QString buttonsAvatar = "QPushButton {"
-"background-color: #86592d;"
-"border: 2px solid #4d3319;"
-"border-radius: 5px;"
-"padding: 5px;"
-"color: black;"
-"text-align: center;"
-"font-family: Goudy Old Style, Goudy Type, serif;"
-"font-weight: bold;"
-"font-size: 13px;"
-"margin: 3px 3px;"
-"cursor: pointer;"
-"}"
-"QPushButton:hover {"
-"background-color: #734d26;"
-"}";
-
-QString standardButton = "QPushButton {"
+QString buttonAvatar = "QPushButton {"
 "margin: 3px 3px;"
 "letter-spacing: 2px;"
 "border-radius: 8px;"
@@ -70,3 +53,96 @@ QString CharacterList = "CharacterListWidget{"
 "box-shadow: 0px 0px 5px 5px rgba(255,255,255,0.2);"
 "}";
 
+QString buttonCharacter = "QPushButton {"
+"margin: 3px 3px;"
+"letter-spacing: 2px;"
+"border-radius: 8px;"
+"font-family: Goudy Old Style, Goudy Type, serif;"
+"color: #ffc000;"
+"font-size: 14px;"
+"font-weight: bold;"
+"text-align: center;"
+"padding: 4px;"
+"background: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(139,0,0,255), stop:1 rgba(139,0,0,255));"
+"border-top: 4px ridge #ffb000;"
+"border-left: 4px groove #ffb000;"
+"border-right: 4px ridge #ffb000;"
+"border-bottom: 4px groove #ffb000;"
+"box-shadow: inset 0px 0px 5px 3px rgba(1,1,1,0.3);"
+"}"
+"QPushButton:hover {"
+"background: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(229,43,43,255), stop:1 rgba(139,0,0,255));"
+"box-shadow: 0px 0px 5px 5px rgba(255,255,255,0.2);"
+"}"
+"QPushButton:active {"
+"background: radial - gradient(circle, #ec6a6a, #e52b2b);"
+"box - shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)"
+"}";
+
+QString buttonTeam = "QPushButton {"
+"margin: 1px 1px;"
+"letter-spacing: 2px;"
+"border-radius: 8px;"
+"font-family: Goudy Old Style, Goudy Type, serif;"
+"color: #ffc000;"
+"font-size: 14px;"
+"font-weight: bold;"
+"text-align: center;"
+"padding: 2px;"
+"background: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(139,0,0,255), stop:1 rgba(139,0,0,255));"
+"border-top: 4px ridge #ffb000;"
+"border-left: 4px groove #ffb000;"
+"border-right: 4px ridge #ffb000;"
+"border-bottom: 4px groove #ffb000;"
+"box-shadow: inset 0px 0px 5px 3px rgba(1,1,1,0.3);"
+"}"
+"QPushButton:hover {"
+"background: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(229,43,43,255), stop:1 rgba(139,0,0,255));"
+"box-shadow: 0px 0px 5px 5px rgba(255,255,255,0.2);"
+"}"
+"QPushButton:active {"
+"background: radial - gradient(circle, #ec6a6a, #e52b2b);"
+"box - shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)"
+"}";
+
+QString tab =
+"QTabWidget::pane {"
+"border-top: 6px ridge #604020;"
+"border-left: 6px groove #604020;"
+"border-right: 6px ridge #604020;"
+"border-bottom: 6px groove #604020;"
+"background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(210, 166, 121, 255), stop:0.98 rgba(210, 166, 121, 255), stop:1 rgba(128, 87, 48, 255));" /* Delikatny gradient */
+"}"
+"QTabBar::tab {"
+"border: 5px solid #604020;"
+"padding: 8px;"
+"background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(210, 166, 121, 255), stop:0.98 rgba(210, 166, 121, 255), stop:1 rgba(128, 87, 48, 255));" /* Domyœlny gradient */
+"font-family: Goudy Old Style, Goudy Type, serif;"
+"font-size: 14px;"
+"}"
+"QTabBar::tab:selected, QTabBar::tab:hover {"
+"background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(230, 191, 148, 255), stop:0.98 rgba(230, 191, 148, 255), stop:1 rgba(180, 147, 104, 255));" /* Jasniejszy gradient dla wybranej/najechanej zak³adki */
+"}"
+"QTabBar::tab:!selected {"
+"margin-top: 3px;" /* Aby zaznaczone karty by³y wy¿ej */
+"}"
+"QTabBar::tab:first {"
+"border-top-left-radius: 10px;"
+"}"
+"QTabBar::tab:last {"
+"border-top-right-radius: 10px;"
+"}";
+
+
+QString mainBackground = "background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(217, 179, 140, 255), stop:1 rgba(217, 179, 140, 255));";
+
+QString normalLabel = "QLabel {"
+"font-family: Goudy Old Style, Goudy Type, serif;"
+"font-size: 14px;"
+"}";
+
+QString titleLabel = "QLabel {"
+"font-family: Goudy Old Style, Goudy Type, serif;"
+"font-size: 19px;"
+"font-weight: bold;"
+"}";
