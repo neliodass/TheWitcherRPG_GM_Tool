@@ -2,6 +2,7 @@
 #include <string> 
 #include <QString>
 #include <iostream>
+#include <QFontDatabase>
 #include "CharacterListWidget.h"
 #include "ui_stylization.h"
 
@@ -37,6 +38,17 @@ void GM_Util_Tool::set_style() {
     ui.labelWeaponDamage->setStyleSheet(normalLabel);
     ui.labelWeaponName->setStyleSheet(normalLabel);
     ui.labelTitle->setStyleSheet(titleLabel);
+    ui.checkBoxIsMagical->setStyleSheet(checkBox);
+    ui.inputAge->setStyleSheet(normalInput);
+    ui.inputArmor->setStyleSheet(normalInput);
+    ui.inputAttack->setStyleSheet(normalInput);
+    ui.inputBackstory->setStyleSheet(normalInput);
+    ui.inputEvasion->setStyleSheet(normalInput);
+    ui.inputHP->setStyleSheet(normalInput);
+    ui.inputName->setStyleSheet(normalInput);
+    ui.inputSorcery->setStyleSheet(normalInput);
+    ui.inputWeaponDamage->setStyleSheet(normalInput);
+    ui.inputWeaponName->setStyleSheet(normalInput);
 }
 
 GM_Util_Tool::~GM_Util_Tool()

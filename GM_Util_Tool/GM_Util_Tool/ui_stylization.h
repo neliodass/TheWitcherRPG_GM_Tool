@@ -13,5 +13,7 @@ extern QString tab;
 extern QString mainBackground;
 extern QString normalLabel;
 extern QString titleLabel;
+extern QString checkBox;
+extern QString normalInput;
 
 #endif
