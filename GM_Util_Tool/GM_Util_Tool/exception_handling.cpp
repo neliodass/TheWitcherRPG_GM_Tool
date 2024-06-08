@@ -44,30 +44,34 @@ void showExceptionMessageBox(const std::vector<std::string>& exceptions) {
 	exc_window.exec();
 }
 
-int characterSaveExceptions(QLineEdit* name, QLineEdit* age, QLineEdit*	hp, QLineEdit* armor, QLineEdit* attack_pot, QLineEdit* evasion_pot, QLineEdit* sorcery_pot, QLineEdit* weapon_damage) {
+int characterSaveExceptions(QLineEdit* name, QLineEdit* age, QLineEdit* hp, QLineEdit* armor, QLineEdit* attack_pot, QLineEdit* evasion_pot, QLineEdit* sorcery_pot, QLineEdit* weapon_damage) {
 	std::vector<std::string> character_exceptions;
-	
+	std::vector<QLineEdit*> int_inputs = { age, hp, armor, attack_pot, evasion_pot, sorcery_pot, weapon_damage };
+	std::vector<std::string> labels = { "Age", "HP", "Armor", "Attack Potencial", "Evasion Potencial", "Sorcery Potencial", "Weapon Damage" };
+
 	//Is name empty
 	if (name->text().isEmpty()) {
 		character_exceptions.push_back("The character name is empty!\nPlease name your characer.\n\n");
 	}
-	/*
+
+
 	//Are integer values negative
-	std::vector<QLineEdit*> int_inputs = { age, hp, armor, attack_pot, evasion_pot, sorcery_pot, weapon_damage };
-	std::vector<std::string> labels = { "Age", "HP", "Armor", "Attack Potencial", "Evasion Potencial", "Sorcery Potencial", "Weapon Damage" };
-	
 	auto is_negative = [](QLineEdit* input) {
 		return input->text().toInt() < 0;
-	};
+		};
+
 	if (std::any_of(int_inputs.begin(), int_inputs.end(), is_negative)) {
 		character_exceptions.push_back("None of integer vaules can be negative!\n");
-	/*if (age->text().toInt() < 0 || hp->text().toInt() < 0 || armor->text().toInt() < 0 || attack_pot->text().toInt() < 0 || evasion_pot->text().toInt() < 0 || sorcery_pot->text().toInt() < 0 || weapon_damage->text().toInt() < 0) {
-		character_exceptions.push_back("They cant bet negative!");
-	}*/
+		for (size_t i = 0; i < int_inputs.size(); ++i) {
+			if (is_negative(int_inputs[i])) {
+				character_exceptions.push_back(labels[i] + " is negative.\n\n");
+			}
+		}
+	}
 
 	if (character_exceptions.empty()) {
 		return 0;
-
+	}
 	showExceptionMessageBox(character_exceptions);
-	return -1;
+		return -1;
 }
