@@ -6,7 +6,7 @@
 #include <QString>
 
 extern QString buttonAvatar;
-extern QString CharacterList;
+extern QString characterList;
 extern QString buttonCharacter;
 extern QString buttonTeam;
 extern QString tab;
@@ -15,5 +15,11 @@ extern QString normalLabel;
 extern QString titleLabel;
 extern QString checkBox;
 extern QString normalInput;
+extern QString comboBoxInput;
+extern QString avatarBackground;
+extern QString frameCharacter;
+extern QString frameAvatar;
+extern QString backstory;
+extern QString scrollArea;
 
 #endif

@@ -49,6 +49,13 @@ void GM_Util_Tool::set_style() {
     ui.inputSorcery->setStyleSheet(normalInput);
     ui.inputWeaponDamage->setStyleSheet(normalInput);
     ui.inputWeaponName->setStyleSheet(normalInput);
+    ui.inputRace->setStyleSheet(comboBoxInput);
+    ui.inputProfession->setStyleSheet(comboBoxInput);
+    ui.avatar->setStyleSheet(avatarBackground);
+    ui.frameAvatar->setStyleSheet(frameAvatar);
+    ui.frameCharacterCreator->setStyleSheet(frameCharacter);
+    ui.inputBackstory->setStyleSheet(backstory);
+    ui.characterListArea->setStyleSheet(scrollArea);
 }
 
 GM_Util_Tool::~GM_Util_Tool()

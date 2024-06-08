@@ -25,7 +25,7 @@ QString buttonAvatar = "QPushButton {"
 "background: radial - gradient(circle, #ec6a6a, #e52b2b);"
 "}";
 
-QString CharacterList = "CharacterListWidget{"
+QString characterList = "CharacterListWidget{"
 "margin: 3px 3px;"
 "color: #ffc000;"
 "padding: 5px;"
@@ -100,20 +100,20 @@ QString tab =
 "border-left: 6px groove #604020;"
 "border-right: 6px ridge #604020;"
 "border-bottom: 6px groove #604020;"
-"background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(210, 166, 121, 255), stop:0.98 rgba(210, 166, 121, 255), stop:1 rgba(128, 87, 48, 255));" /* Delikatny gradient */
+"background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(210, 166, 121, 255), stop:0.98 rgba(210, 166, 121, 255), stop:1 rgba(128, 87, 48, 255));" 
 "}"
 "QTabBar::tab {"
 "border: 5px solid #604020;"
 "padding: 8px;"
-"background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(210, 166, 121, 255), stop:0.98 rgba(210, 166, 121, 255), stop:1 rgba(128, 87, 48, 255));" /* Domyœlny gradient */
+"background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(210, 166, 121, 255), stop:0.98 rgba(210, 166, 121, 255), stop:1 rgba(128, 87, 48, 255));" 
 "font-family: Goudy Old Style, Goudy Type, serif;"
 "font-size: 14px;"
 "}"
 "QTabBar::tab:selected, QTabBar::tab:hover {"
-"background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(230, 191, 148, 255), stop:0.98 rgba(230, 191, 148, 255), stop:1 rgba(180, 147, 104, 255));" /* Jasniejszy gradient dla wybranej/najechanej zak³adki */
+"background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(230, 191, 148, 255), stop:0.98 rgba(230, 191, 148, 255), stop:1 rgba(180, 147, 104, 255));"
 "}"
 "QTabBar::tab:!selected {"
-"margin-top: 3px;" /* Aby zaznaczone karty by³y wy¿ej */
+"margin-top: 3px;"
 "}"
 "QTabBar::tab:first {"
 "border-top-left-radius: 10px;"
@@ -171,5 +171,64 @@ QString normalInput = "QLineEdit {"
 "border-left: 3px groove #734d26;"
 "border-right: 3px ridge #734d26;"
 "border-bottom: 3px groove #734d26;"
-"background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(230, 191, 148, 255), stop:0.98 rgba(230, 191, 148, 255), stop:1 rgba(180, 147, 104, 255));"
+"background-color: rgba(230, 191, 148, 255);"
+"}";
+
+QString comboBoxInput = "QComboBox {"
+"border-top: 3px ridge #734d26;"
+"border-left: 3px groove #734d26;"
+"border-right: 3px ridge #734d26;"
+"border-bottom: 3px groove #734d26;"
+"background-color: rgba(230, 191, 148, 255);"
+"font-family: Goudy Old Style, Goudy Type, serif;"
+"font-size: 14px;"
+"}";
+
+QString avatarBackground = "QLabel {"
+"background-color: rgba(230, 191, 148, 255);"
+"}";
+
+QString frameCharacter = "QFrame {"
+"border-top: 3px ridge #734d26;"
+"border-left: 3px groove #734d26;"
+"border-right: 3px ridge #734d26;"
+"border-bottom: 3px groove #734d26;"
+"}"
+"QFrame > * { "
+"border: none;"
+"}";
+
+QString frameAvatar = "QFrame {"
+"border-top: 2px ridge #734d26;"
+"border-left: 2px groove #734d26;"
+"border-right: 2px ridge #734d26;"
+"border-bottom: 2px groove #734d26;"
+"}";
+
+QString backstory = "QTextEdit {"
+"border-top: 3px ridge #734d26;"
+"border-left: 3px groove #734d26;"
+"border-right: 3px ridge #734d26;"
+"border-bottom: 3px groove #734d26;"
+"background-color: rgba(230, 191, 148, 255);"
+"margin: 1px 1px 1px 3px;"
+"}";
+
+QString scrollArea = "QScrollArea {"
+"border-top: 3px ridge #734d26;"
+"border-left: 3px groove #734d26;"
+"border-right: 3px ridge #734d26;"
+"border-bottom: 3px groove #734d26;"
+"}"
+"QScrollArea > QWidget > QWidget {"
+"background-color: rgba(230, 191, 148, 255);"
+"}"
+"QScrollBar:vertical {"
+"background-color: rgba(230, 191, 148, 255);"
+"}"
+"QScrollBar::handle:vertical {"
+"border-top: 2px ridge #734d26;"
+"border-left: 2px groove #734d26;"
+"border-right: 2px ridge #734d26;"
+"border-bottom: 2px groove #734d26;"
 "}";

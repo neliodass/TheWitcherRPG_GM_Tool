@@ -3,8 +3,8 @@
 #include <string>
 #include<QImage>
 
-enum CharacterRace{human,werebbubb,elf,gnome,dwarf,halfling,vran};
-enum CharacterClass{bard,mage,druid,priest,merchant,doctor,criminal,craftsman,noble,witcher,man_at_arms};
+enum CharacterRace{dwarf,elf,gnome,halfling,human,werebubb,vran};
+enum CharacterClass{bard,craftsman,criminal,doctor,druid,mage,man_at_arms,merchant,noble,priest,witcher};
 
 class PlayableCharacter :
     public Entity
