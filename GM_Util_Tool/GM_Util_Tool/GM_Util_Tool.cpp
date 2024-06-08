@@ -1,10 +1,10 @@
 ﻿#include "GM_Util_Tool.h"
+#include "CharacterListWidget.h"
+#include "ui_stylization.h"
+#include "exception_handling.h"
 #include <string> 
 #include <QString>
 #include <iostream>
-#include <QFontDatabase>
-#include "CharacterListWidget.h"
-#include "ui_stylization.h"
 
 GM_Util_Tool::GM_Util_Tool(QWidget* parent)
     : QMainWindow(parent)
@@ -29,9 +29,6 @@ void GM_Util_Tool::on_buttonAvatarChoice_clicked() {
         if (valid) {
             image = image.scaledToWidth(ui.avatar->width(), Qt::SmoothTransformation);
             ui.avatar->setPixmap(QPixmap::fromImage(image));
-
-            
-
         }
         else {
             //something i'll add later
@@ -68,6 +65,10 @@ void GM_Util_Tool::createCharacterWidgets()
     }
 }
 void GM_Util_Tool::on_buttonSave_clicked() {
+    int exception = characterSaveExceptions(ui.inputName, ui.inputAge, ui.inputHP, ui.inputArmor, ui.inputAttack, ui.inputEvasion, ui.inputSorcery, ui.inputWeaponDamage);
+    if (exception == -1) {
+        return;
+    }
     ui.buttonDelete->setDisabled(true);
     PlayableCharacter* currentCharacter;
     if (isCharacterLoaded) {
