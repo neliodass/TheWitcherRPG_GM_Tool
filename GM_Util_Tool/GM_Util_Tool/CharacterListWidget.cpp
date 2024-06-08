@@ -3,6 +3,7 @@
 #include <QVBoxLayout>
 #include"PlayableCharacter.h"
 #include<iostream>
+#include "ui_stylization.h"
 
 CharacterListWidget::CharacterListWidget(PlayableCharacter& widgetCharacter, const QString& characterName, const QString& professionName, QWidget* parent)
     : QFrame(parent),
@@ -12,20 +13,11 @@ CharacterListWidget::CharacterListWidget(PlayableCharacter& widgetCharacter, con
     layout(new QVBoxLayout(this))
 {
     
-    this->setFrameShape(QFrame::Box);
-    this->setLineWidth(2);
-    this->setMinimumSize(QSize(0,65));
-    this->setMaximumSize(QSize(250,65));
-    this->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
-    QFont nameFont = characterNameLabel->font();
-    nameFont.setBold(true);
-    nameFont.setPixelSize(16);
-    characterNameLabel->setFont(nameFont);
-
-
     layout->addWidget(characterNameLabel);
     layout->addWidget(professionNameLabel);
     setLayout(layout);
+
+    this->setStyleSheet(characterList);
 }
 
 void CharacterListWidget::onWidgetClicked()

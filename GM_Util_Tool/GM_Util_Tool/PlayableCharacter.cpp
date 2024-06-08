@@ -14,16 +14,16 @@ auto PlayableCharacter::getClassString() const -> const std::string
 	switch (this->getClass())
 	{
 	case 0: return "Bard";
-	case 1: return "Czarodziej";
-	case 2: return "Druid";
-	case 3: return "Kap³an";
-	case 4: return "Kupiec";
-	case 5: return "Medyk";
-	case 6: return "Przestêpca";
-	case 7: return "Rzemieœlnik";
-	case 8: return "Szlachcic";
-	case 9: return "WiedŸmin";
-	case 10: return "Zbrojny";
+	case 1: return "Craftsman";
+	case 2: return "Criminal";
+	case 3: return "Doctor";
+	case 4: return "Druid";
+	case 5: return "Mage";
+	case 6: return "Man at arms";
+	case 7: return "Merchant";
+	case 8: return "Noble";
+	case 9: return "Priest";
+	case 10: return "Witcher";
 	}
 }
 void PlayableCharacter::saveToBinaryFile(const std::string& filename)

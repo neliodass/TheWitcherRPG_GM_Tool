@@ -12,7 +12,7 @@ class GM_Util_Tool : public QMainWindow
 public:
     GM_Util_Tool(QWidget* parent = nullptr);
     ~GM_Util_Tool();
-
+    void set_style();
 
 public slots:
     void on_buttonAvatarChoice_clicked();
