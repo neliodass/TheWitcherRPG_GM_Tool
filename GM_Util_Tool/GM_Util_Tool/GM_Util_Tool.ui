@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>776</width>
-    <height>528</height>
+    <width>887</width>
+    <height>566</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -40,7 +40,7 @@
         </sizepolicy>
        </property>
        <attribute name="title">
-        <string>Kreator Teamu</string>
+        <string>Team Creator</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_7" columnstretch="70,0">
         <property name="sizeConstraint">
@@ -54,14 +54,14 @@
           <item>
            <widget class="QPushButton" name="readTeamFileButton">
             <property name="text">
-             <string>Wczytaj team</string>
+             <string>Load team</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="saveTeamFileButton">
             <property name="text">
-             <string>Zapisz team</string>
+             <string>Save team</string>
             </property>
            </widget>
           </item>
@@ -102,7 +102,7 @@
              <x>0</x>
              <y>0</y>
              <width>166</width>
-             <height>428</height>
+             <height>466</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3" stretch="20">
@@ -156,7 +156,7 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Kreator postaci&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Character board&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
@@ -176,14 +176,14 @@
                <item row="6" column="0" colspan="2">
                 <widget class="QLabel" name="labelAttack">
                  <property name="text">
-                  <string>Pot. ataku</string>
+                  <string>Attack potential</string>
                  </property>
                 </widget>
                </item>
                <item row="11" column="0" colspan="2">
                 <widget class="QLabel" name="labelWeaponDamage">
                  <property name="text">
-                  <string>Obrażenia</string>
+                  <string>Weapon damage</string>
                  </property>
                 </widget>
                </item>
@@ -193,7 +193,7 @@
                <item row="7" column="0" colspan="2">
                 <widget class="QLabel" name="labelEvasion">
                  <property name="text">
-                  <string>Pot. uniku</string>
+                  <string>Evade potential</string>
                  </property>
                 </widget>
                </item>
@@ -204,12 +204,7 @@
                 <widget class="QComboBox" name="inputRace">
                  <item>
                   <property name="text">
-                   <string>Człowiek</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Bobołak</string>
+                   <string>Dwarf</string>
                   </property>
                  </item>
                  <item>
@@ -219,17 +214,22 @@
                  </item>
                  <item>
                   <property name="text">
-                   <string>Gnom</string>
+                   <string>Gnome</string>
                   </property>
                  </item>
                  <item>
                   <property name="text">
-                   <string>Krasnolud</string>
+                   <string>Halfling</string>
                   </property>
                  </item>
                  <item>
                   <property name="text">
-                   <string>Niziołek</string>
+                   <string>Human</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Werebubb</string>
                   </property>
                  </item>
                  <item>
@@ -252,21 +252,21 @@
                <item row="0" column="0">
                 <widget class="QLabel" name="labelName">
                  <property name="text">
-                  <string>Imię</string>
+                  <string>Name</string>
                  </property>
                 </widget>
                </item>
                <item row="8" column="0" colspan="5">
                 <widget class="QCheckBox" name="checkBoxIsMagical">
                  <property name="text">
-                  <string>Postać wrażliwa na magię</string>
+                  <string>Sensitive to magic</string>
                  </property>
                 </widget>
                </item>
                <item row="9" column="0" colspan="2">
                 <widget class="QLabel" name="labelSorcery">
                  <property name="text">
-                  <string>Pot. Zaklęć</string>
+                  <string>Sorcery potential</string>
                  </property>
                 </widget>
                </item>
@@ -276,7 +276,7 @@
                <item row="2" column="0">
                 <widget class="QLabel" name="labelRace">
                  <property name="text">
-                  <string>Rasa</string>
+                  <string>Race</string>
                  </property>
                 </widget>
                </item>
@@ -293,7 +293,7 @@
                <item row="10" column="0" colspan="2">
                 <widget class="QLabel" name="labelWeaponName">
                  <property name="text">
-                  <string>Nazwa broni</string>
+                  <string>Weapon name</string>
                  </property>
                 </widget>
                </item>
@@ -319,7 +319,17 @@
                  </item>
                  <item>
                   <property name="text">
-                   <string>Czarodziej</string>
+                   <string>Craftsman</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Criminal</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Doctor</string>
                   </property>
                  </item>
                  <item>
@@ -329,42 +339,32 @@
                  </item>
                  <item>
                   <property name="text">
-                   <string>Kapłan</string>
+                   <string>Mage</string>
                   </property>
                  </item>
                  <item>
                   <property name="text">
-                   <string>Kupiec</string>
+                   <string>Man at arms</string>
                   </property>
                  </item>
                  <item>
                   <property name="text">
-                   <string>Medyk</string>
+                   <string>Merchant</string>
                   </property>
                  </item>
                  <item>
                   <property name="text">
-                   <string>Przestępca</string>
+                   <string>Noble</string>
                   </property>
                  </item>
                  <item>
                   <property name="text">
-                   <string>Rzemieślnik</string>
+                   <string>Priest</string>
                   </property>
                  </item>
                  <item>
                   <property name="text">
-                   <string>Szlachcic</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Wiedźmin</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>Zbrojny</string>
+                   <string>Witcher</string>
                   </property>
                  </item>
                 </widget>
@@ -372,28 +372,28 @@
                <item row="11" column="4">
                 <widget class="QLabel" name="labelK6">
                  <property name="text">
-                  <string>k6</string>
+                  <string>d6</string>
                  </property>
                 </widget>
                </item>
                <item row="3" column="0">
                 <widget class="QLabel" name="labelProfession">
                  <property name="text">
-                  <string>Klasa</string>
+                  <string>Class</string>
                  </property>
                 </widget>
                </item>
                <item row="1" column="0">
                 <widget class="QLabel" name="labelAge">
                  <property name="text">
-                  <string>Wiek</string>
+                  <string>Age</string>
                  </property>
                 </widget>
                </item>
                <item row="5" column="0" colspan="2">
                 <widget class="QLabel" name="labelArmor">
                  <property name="text">
-                  <string>Wyparowania</string>
+                  <string>Armor</string>
                  </property>
                 </widget>
                </item>
@@ -436,14 +436,14 @@
                    <item>
                     <widget class="QPushButton" name="buttonAvatarChoice">
                      <property name="text">
-                      <string>Wybierz awatar</string>
+                      <string>Load avatar</string>
                      </property>
                     </widget>
                    </item>
                    <item>
                     <widget class="QPushButton" name="buttonDeleteAvatar">
                      <property name="text">
-                      <string>Usun awatar</string>
+                      <string>Delete avatar</string>
                      </property>
                     </widget>
                    </item>
@@ -542,7 +542,7 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="labelBackstory">
                    <property name="text">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Historia postaci&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Character's background&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                   </widget>
                  </item>
@@ -585,7 +585,7 @@
                 </size>
                </property>
                <property name="text">
-                <string>Zapisz</string>
+                <string>Save</string>
                </property>
               </widget>
              </item>
@@ -617,7 +617,7 @@
                 </size>
                </property>
                <property name="text">
-                <string>Usun</string>
+                <string>Delete</string>
                </property>
               </widget>
              </item>
@@ -632,7 +632,7 @@
        <attribute name="title">
         <string>Battle tracker</string>
        </attribute>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="inProgressLabel">
         <property name="geometry">
          <rect>
           <x>200</x>
