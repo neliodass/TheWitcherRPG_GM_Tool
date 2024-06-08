@@ -15,51 +15,9 @@ GM_Util_Tool::GM_Util_Tool(QWidget* parent)
     ui.buttonDelete->setDisabled(true);
 }
 
-void GM_Util_Tool::set_style() {
-    ui.buttonAvatarChoice->setStyleSheet(buttonAvatar);
-    ui.buttonDeleteAvatar->setStyleSheet(buttonAvatar);
-    ui.buttonDelete->setStyleSheet(buttonCharacter);
-    ui.buttonSave->setStyleSheet(buttonCharacter);
-    ui.readTeamFileButton->setStyleSheet(buttonTeam);
-    ui.saveTeamFileButton->setStyleSheet(buttonTeam);
-    ui.tabWidget->setStyleSheet(tab);
-    //this->setStyleSheet(mainBackground);
-    ui.labelAge->setStyleSheet(normalLabel);
-    ui.labelArmor->setStyleSheet(normalLabel);
-    ui.labelAttack->setStyleSheet(normalLabel);
-    ui.labelBackstory->setStyleSheet(normalLabel);
-    ui.labelEvasion->setStyleSheet(normalLabel);
-    ui.labelHP->setStyleSheet(normalLabel);
-    ui.labelK6->setStyleSheet(normalLabel);
-    ui.labelName->setStyleSheet(normalLabel);
-    ui.labelProfession->setStyleSheet(normalLabel);
-    ui.labelRace->setStyleSheet(normalLabel);
-    ui.labelSorcery->setStyleSheet(normalLabel);
-    ui.labelWeaponDamage->setStyleSheet(normalLabel);
-    ui.labelWeaponName->setStyleSheet(normalLabel);
-    ui.labelTitle->setStyleSheet(titleLabel);
-    ui.checkBoxIsMagical->setStyleSheet(checkBox);
-    ui.inputAge->setStyleSheet(normalInput);
-    ui.inputArmor->setStyleSheet(normalInput);
-    ui.inputAttack->setStyleSheet(normalInput);
-    ui.inputBackstory->setStyleSheet(normalInput);
-    ui.inputEvasion->setStyleSheet(normalInput);
-    ui.inputHP->setStyleSheet(normalInput);
-    ui.inputName->setStyleSheet(normalInput);
-    ui.inputSorcery->setStyleSheet(normalInput);
-    ui.inputWeaponDamage->setStyleSheet(normalInput);
-    ui.inputWeaponName->setStyleSheet(normalInput);
-    ui.inputRace->setStyleSheet(comboBoxInput);
-    ui.inputProfession->setStyleSheet(comboBoxInput);
-    ui.avatar->setStyleSheet(avatarBackground);
-    ui.frameAvatar->setStyleSheet(frameAvatar);
-    ui.frameCharacterCreator->setStyleSheet(frameCharacter);
-    ui.inputBackstory->setStyleSheet(backstory);
-    ui.characterListArea->setStyleSheet(scrollArea);
-}
-
 GM_Util_Tool::~GM_Util_Tool()
 {}
+
 void GM_Util_Tool::on_buttonAvatarChoice_clicked() {
     QString fileName = QFileDialog::getOpenFileName(this, tr("Wybierz"), "", tr("Images (*.png *.jpg *.jpeg *.bmp *.gif)"));
 
@@ -253,4 +211,54 @@ void GM_Util_Tool::on_buttonDelete_clicked()
     
 
 
+}
+
+void GM_Util_Tool::set_style() {
+    //Buttons
+    ui.buttonAvatarChoice->setStyleSheet(buttonAvatar);
+    ui.buttonDeleteAvatar->setStyleSheet(buttonAvatar);
+    ui.buttonDelete->setStyleSheet(buttonCharacter);
+    ui.buttonSave->setStyleSheet(buttonCharacter);
+    ui.readTeamFileButton->setStyleSheet(buttonTeam);
+    ui.saveTeamFileButton->setStyleSheet(buttonTeam);
+    //Main backgrounds
+    ui.tabWidget->setStyleSheet(tab);
+    this->setStyleSheet(mainBackground);
+    ui.frameCharacterCreator->setStyleSheet(frameCharacter);
+    //Labels
+    ui.labelAge->setStyleSheet(normalLabel);
+    ui.labelArmor->setStyleSheet(normalLabel);
+    ui.labelAttack->setStyleSheet(normalLabel);
+    ui.labelBackstory->setStyleSheet(backstoryLabel);
+    ui.labelEvasion->setStyleSheet(normalLabel);
+    ui.labelHP->setStyleSheet(normalLabel);
+    ui.labelK6->setStyleSheet(normalLabel);
+    ui.labelName->setStyleSheet(normalLabel);
+    ui.labelProfession->setStyleSheet(normalLabel);
+    ui.labelRace->setStyleSheet(normalLabel);
+    ui.labelSorcery->setStyleSheet(normalLabel);
+    ui.labelWeaponDamage->setStyleSheet(normalLabel);
+    ui.labelWeaponName->setStyleSheet(normalLabel);
+    ui.labelTitle->setStyleSheet(titleLabel);
+    //Standard input boxes
+    ui.checkBoxIsMagical->setStyleSheet(checkBox);
+    ui.inputAge->setStyleSheet(normalInput);
+    ui.inputArmor->setStyleSheet(normalInput);
+    ui.inputAttack->setStyleSheet(normalInput);
+    ui.inputBackstory->setStyleSheet(normalInput);
+    ui.inputEvasion->setStyleSheet(normalInput);
+    ui.inputHP->setStyleSheet(normalInput);
+    ui.inputName->setStyleSheet(normalInput);
+    ui.inputSorcery->setStyleSheet(normalInput);
+    ui.inputWeaponDamage->setStyleSheet(normalInput);
+    ui.inputWeaponName->setStyleSheet(normalInput);
+    ui.inputRace->setStyleSheet(comboBoxInput);
+    ui.inputProfession->setStyleSheet(comboBoxInput);
+    //Avatar related
+    ui.avatar->setStyleSheet(avatarBackground);
+    ui.frameAvatar->setStyleSheet(frameAvatar);
+    //Backstory
+    ui.inputBackstory->setStyleSheet(backstory);
+    //Team scroll area
+    ui.characterListArea->setStyleSheet(scrollArea);
 }
