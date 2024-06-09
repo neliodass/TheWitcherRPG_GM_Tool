@@ -65,7 +65,7 @@ void GM_Util_Tool::createCharacterWidgets()
     }
 }
 void GM_Util_Tool::on_buttonSave_clicked() {
-    int exception = characterSaveExceptions(ui.inputName, ui.inputAge, ui.inputHP, ui.inputArmor, ui.inputAttack, ui.inputEvasion, ui.inputSorcery, ui.inputWeaponDamage);
+    int exception = characterSaveExceptions(*this);
     if (exception == -1) {
         return;
     }

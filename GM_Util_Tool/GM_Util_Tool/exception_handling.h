@@ -1,5 +1,8 @@
 #pragma once
+#include "GM_Util_Tool.h"
 
-extern int characterSaveExceptions(QLineEdit* name, QLineEdit* age, QLineEdit* hp, QLineEdit* armor, QLineEdit* attack_pot, QLineEdit* evasion_pot, QLineEdit* sorcery_pot, QLineEdit* weapon_damage);
+class GM_Util_Tool; 
+
+extern int characterSaveExceptions(const GM_Util_Tool& GM_Util_Tool);
 
 
