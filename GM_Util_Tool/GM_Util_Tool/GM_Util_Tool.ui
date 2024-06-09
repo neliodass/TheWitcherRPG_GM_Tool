@@ -49,24 +49,6 @@
         <property name="horizontalSpacing">
          <number>18</number>
         </property>
-        <item row="2" column="1">
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
-          <item>
-           <widget class="QPushButton" name="readTeamFileButton">
-            <property name="text">
-             <string>Load team</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="saveTeamFileButton">
-            <property name="text">
-             <string>Save team</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
         <item row="1" column="1">
          <widget class="QScrollArea" name="characterListArea">
           <property name="enabled">
@@ -525,7 +507,7 @@
                        <string/>
                       </property>
                       <property name="scaledContents">
-                       <bool>false</bool>
+                       <bool>true</bool>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -625,6 +607,24 @@
            </item>
           </layout>
          </widget>
+        </item>
+        <item row="2" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QPushButton" name="readTeamFileButton">
+            <property name="text">
+             <string>Load team</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="saveTeamFileButton">
+            <property name="text">
+             <string>Save team</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
