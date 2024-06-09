@@ -11,6 +11,7 @@ GM_Util_Tool::GM_Util_Tool(QWidget* parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
+    this->setWindowIcon(QIcon("./resources/thewitcher.ico"));
     ui.labelSorcery->setVisible(false);
     ui.inputSorcery->setVisible(false);
     ui.buttonDelete->setDisabled(true);

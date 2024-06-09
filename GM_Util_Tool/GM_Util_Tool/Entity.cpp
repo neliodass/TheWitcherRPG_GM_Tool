@@ -16,15 +16,11 @@ Entity::Entity(const std::string name, const int maxHealth, const int currentHea
 	this->evadePotential = evadePotential;
 	this->attackPotential = attackPotential;
 	this->sorceryPotential = sorceryPotential;
-	//this->weapon = weapon;
+	this->weapon = weapon;
 	this->alive = alive;
 	this->magical = magical;
 
 }
-
-
-
-
 
 void Entity::takeDamage(int damage)
 {

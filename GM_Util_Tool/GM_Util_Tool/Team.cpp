@@ -54,8 +54,7 @@ bool Team::readFromBinaryFile(const std::string& filename) {
 		 team.clear();
 		 return false;
 	 }
-	 //TODO Monit o udanym odczycie pliku
-	 //std::cout << "Dane wczytane z pliku binarnego.\n";
+
  }
  else {
 
