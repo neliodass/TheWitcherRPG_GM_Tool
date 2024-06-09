@@ -36,7 +36,7 @@
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
-    <QtInstall>6.6.3_msvc2019_64</QtInstall>
+    <QtInstall>6.7.0_msvc2019_64</QtInstall>
     <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
@@ -71,7 +71,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -93,6 +93,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CharacterListWidget.cpp" />
+    <ClCompile Include="exception_handling.cpp" />
     <ClCompile Include="PlayableCharacter.cpp" />
     <ClCompile Include="Team.cpp" />
     <ClCompile Include="ui_stylization.cpp" />
@@ -107,6 +108,7 @@
   <ItemGroup>
     <QtMoc Include="CharacterListWidget.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="exception_handling.h" />
     <ClInclude Include="PlayableCharacter.h" />
     <ClInclude Include="Team.h" />
     <ClInclude Include="ui_stylization.h" />

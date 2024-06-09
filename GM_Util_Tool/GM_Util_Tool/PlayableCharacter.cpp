@@ -130,7 +130,6 @@ void PlayableCharacter::readFromBinaryFile(std::ifstream& file) {
 			characterImage.detach(); 
 			this->characterImage = characterImage;
 		}
-		//TODO oblusga bledu
 	}
 	else {
 		std::cerr << "Nie mo¿na otworzyæ pliku binarnego.\n";

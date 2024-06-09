@@ -1,25 +1,28 @@
 ﻿#include "GM_Util_Tool.h"
-#include <string> 
-#include <QString>
-#include <iostream>
-#include <QFontDatabase>
 #include "CharacterListWidget.h"
 #include "ui_stylization.h"
+#include "exception_handling.h"
+#include <string> 
+#include <QString>
+#include <QMessageBox>
+#include <iostream>
 
 GM_Util_Tool::GM_Util_Tool(QWidget* parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
+    this->setWindowIcon(QIcon("./resources/thewitcher.ico"));
     ui.labelSorcery->setVisible(false);
     ui.inputSorcery->setVisible(false);
     ui.buttonDelete->setDisabled(true);
+    setValidation();
 }
 
 GM_Util_Tool::~GM_Util_Tool()
 {}
 
 void GM_Util_Tool::on_buttonAvatarChoice_clicked() {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Wybierz"), "", tr("Images (*.png *.jpg *.jpeg *.bmp *.gif)"));
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Choose"), "", tr("Images (*.png *.jpg *.jpeg *.bmp *.gif)"));
 
     if (QString::compare(fileName, QString()) != 0) {
         avatarPath = fileName;
@@ -29,12 +32,12 @@ void GM_Util_Tool::on_buttonAvatarChoice_clicked() {
         if (valid) {
             image = image.scaledToWidth(ui.avatar->width(), Qt::SmoothTransformation);
             ui.avatar->setPixmap(QPixmap::fromImage(image));
-
-            
-
         }
         else {
-            //something i'll add later
+            ExceptionMessageBox error;
+            error.setWindowTitle("Corrupted image");
+            error.setText("Your image is corrupted");
+            error.exec();
         }
     }
 }
@@ -64,10 +67,15 @@ void GM_Util_Tool::createCharacterWidgets()
                 QString(QString::fromStdString(current.getClassString())), this);
             QObject::connect(widget,&CharacterListWidget::clicked,this,&GM_Util_Tool::loadCharacterForEdit);
             layout->insertWidget(i-1,widget);
+            widget->adjustSize();
         }
     }
 }
 void GM_Util_Tool::on_buttonSave_clicked() {
+    int exception = characterSaveExceptions(*this);
+    if (exception == -1) {
+        return;
+    }
     ui.buttonDelete->setDisabled(true);
     PlayableCharacter* currentCharacter;
     if (isCharacterLoaded) {
@@ -141,8 +149,8 @@ void GM_Util_Tool::loadCharacterForEdit( PlayableCharacter& widgetCharacter)
 
 void GM_Util_Tool::on_saveTeamFileButton_clicked()
 {
-    QString filter = "Save Files (*.sav);;All Files (*)";
-    QString fileName = QFileDialog::getSaveFileName(this, "Zapisz team", QDir::homePath(), filter);
+    QString filter = "Save Files (*.sav)";
+    QString fileName = QFileDialog::getSaveFileName(this, "Save team", QDir::homePath(), filter);
     std::cout << fileName.toStdString();
     if (!fileName.isEmpty()) {
         qDebug() << "File to save:" << fileName;
@@ -156,13 +164,23 @@ void GM_Util_Tool::on_saveTeamFileButton_clicked()
 
 void GM_Util_Tool::on_readTeamFileButton_clicked()
 {
-    QString filter = "Save Files (*.sav);;All Files (*)";
-    QString fileName = QFileDialog::getOpenFileName(this, "Wczytaj team", QDir::homePath(), filter);
+    QString filter = "Save Files (*.sav)";
+    QString fileName = QFileDialog::getOpenFileName(this, "Read team", QDir::homePath(), filter);
 
     if (!fileName.isEmpty()) {
-        newTeam.readFromBinaryFile(fileName.toStdString());
-        createCharacterWidgets();
-        
+  
+        if (newTeam.readFromBinaryFile(fileName.toStdString()))
+        {
+            createCharacterWidgets();
+        }
+        else
+        {
+            createCharacterWidgets();
+            ExceptionMessageBox error;
+            error.setWindowTitle("Corrupted file");
+            error.setText("Your file is corrupted");
+            error.exec();
+        }
     }
     else {
         qDebug() << "Open file dialog was canceled.";
@@ -262,3 +280,15 @@ void GM_Util_Tool::set_style() {
     //Team scroll area
     ui.characterListArea->setStyleSheet(scrollArea);
 }
+
+void GM_Util_Tool::setValidation()
+{
+    ui.inputAge->setValidator(ageValidator);
+    ui.inputHP->setValidator(statValidator);
+    ui.inputArmor->setValidator(statValidator);
+    ui.inputAttack->setValidator(statValidator);
+    ui.inputEvasion->setValidator(statValidator);
+    ui.inputSorcery->setValidator(statValidator);
+    ui.inputWeaponDamage->setValidator(statValidator);
+}
+

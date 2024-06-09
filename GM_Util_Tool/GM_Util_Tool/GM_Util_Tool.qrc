@@ -1,3 +1,5 @@
 <RCC>
-    <qresource prefix="/GM_Util_Tool"/>
+    <qresource prefix="/GM_Util_Tool">
+        <file>resources/thewitcher.ico</file>
+    </qresource>
 </RCC>

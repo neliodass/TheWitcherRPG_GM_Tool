@@ -29,5 +29,7 @@ extern QString frameAvatar;
 extern QString backstory;
 //Team scroll area
 extern QString scrollArea;
+//Error Message box
+extern QString errorBox;
 
 #endif

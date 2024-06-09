@@ -16,11 +16,6 @@ CharacterListWidget::CharacterListWidget(PlayableCharacter& widgetCharacter, con
     layout->addWidget(characterNameLabel);
     layout->addWidget(professionNameLabel);
     setLayout(layout);
-
     this->setStyleSheet(characterList);
 }
 
-void CharacterListWidget::onWidgetClicked()
-{
-    std::cout << widgetCharacter.getName();
-}

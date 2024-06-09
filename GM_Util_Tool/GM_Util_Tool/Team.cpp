@@ -18,7 +18,6 @@ int Team::getTeamSize()
 
  PlayableCharacter& Team::getCharacter(int characterId)
 {
-	//TODO:Dodac obsluge czy jest ID jest w team;
 	if (characterId > 0 && characterId <= team.size())
 	{
 		return this->team[characterId - 1];
@@ -26,37 +25,40 @@ int Team::getTeamSize()
 }
  void Team::saveToBinaryFile(const std::string& filename) {
 	 std::ofstream file(filename, std::ios::binary);
-	 if (file.is_open()) {
-		 int length = team.size();
-		 file.write(reinterpret_cast<const char*>(&length), sizeof(length));
-		 file.close();
-		 for (auto character : team) {
-			 character.saveToBinaryFile(filename);
-		 }
-		 std::cout << "Dane zapisane do pliku binarnego.\n";
+	 int length = team.size();
+	 file.write(reinterpret_cast<const char*>(&length), sizeof(length));
+	 file.close();
+	 for (auto character : team) {
+	  character.saveToBinaryFile(filename);
 	 }
-	 else {
-		 std::cerr << "Nie mo¿na otworzyæ pliku binarnego.\n";
-	 }
+	
  }
-void Team::readFromBinaryFile(const std::string& filename) {
+bool Team::readFromBinaryFile(const std::string& filename) {
 	team.clear();
  std::ifstream file(filename, std::ios::binary);
  if (file.is_open()) {
-	 int length = team.size();
+	 try
+	 {
+	 int length;
 	 file.read(reinterpret_cast<char*>(&length), sizeof(length));
-	 PlayableCharacter e1;
 	 for (int i = 0; i < length;i++) {
 		 PlayableCharacter e1;
 		 e1.readFromBinaryFile(file);
 		 this->addCharacter(e1);
 	 }
 	 file.close();
-	 //TODO Monit o udanym odczycie pliku
-	 //std::cout << "Dane wczytane z pliku binarnego.\n";
+	 return true;
+	 }
+	 catch (...)
+	 {
+		 team.clear();
+		 return false;
+	 }
+
  }
  else {
-	 std::cerr << "Nie mo¿na otworzyæ pliku binarnego.\n";
+
+	 return false;
  }
  }
 
@@ -67,4 +69,9 @@ void Team::removeCharacter(int toRemove)
 	{
 		team.erase(team.begin() + indexToRemove);
 	}
+}
+
+void Team::clearTeam()
+{
+	team.clear();
 }
