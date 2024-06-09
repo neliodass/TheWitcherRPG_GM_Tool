@@ -15,6 +15,8 @@ public:
     ~GM_Util_Tool();
     void set_style();
     friend int characterSaveExceptions(const GM_Util_Tool& GM_Util_Tool);
+    void setValidation();
+   
 
 public slots:
     void on_buttonAvatarChoice_clicked();
@@ -33,6 +35,8 @@ private:
     Team newTeam;
     QString avatarPath = "";
     bool isCharacterLoaded = false;
+    const QIntValidator* ageValidator = new QIntValidator(-999, 999);
+    const QIntValidator* statValidator = new QIntValidator(-99, 99);
     
     PlayableCharacter* currentlyEditing = nullptr;
 };

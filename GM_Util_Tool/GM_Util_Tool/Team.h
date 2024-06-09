@@ -11,8 +11,9 @@ public:
 	int getTeamSize();
 	PlayableCharacter& getCharacter(int characterId);
 	void saveToBinaryFile(const std::string& filename);
-	void readFromBinaryFile(const std::string& filename);
+	bool readFromBinaryFile(const std::string& filename);
 	void removeCharacter(int toRemove);
+	void clearTeam();
 	
 };
 

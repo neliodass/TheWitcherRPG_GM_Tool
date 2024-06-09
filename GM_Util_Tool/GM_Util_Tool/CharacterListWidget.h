@@ -16,7 +16,6 @@ signals:
 public:
     explicit CharacterListWidget(PlayableCharacter& widgetCharacter,const QString& characterName, const QString& professionName, QWidget* parent = nullptr);
     PlayableCharacter& widgetCharacter;
-    void onWidgetClicked();
     void mousePressEvent(QMouseEvent* event) override {
         emit clicked(widgetCharacter);
     }
