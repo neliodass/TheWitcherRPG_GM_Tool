@@ -23,6 +23,9 @@ public:
 		"border-right: 4px ridge #ffb000;"
 		"border-bottom: 4px groove #ffb000;"
 		"}"
+		"QPushButton:disabled {"
+		"background: rgba(100,0,0,255);"
+		"}"
 		"QPushButton:hover {"
 		"background: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(229,43,43,255), stop:1 rgba(139,0,0,255));"
 		"}"
@@ -63,7 +66,10 @@ public:
 		"}"
 		"QTabBar::tab {"
 		"color: #000000;"
-		"border: 5px solid #604020;"
+		"border-top: 6px ridge #604020;"
+		"border-left: 6px groove #604020;"
+		"border-right: 6px ridge #604020;"
+		"border-bottom: 6px groove #604020;"
 		"padding: 8px;"
 		"background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(210, 166, 121, 255), stop:1 rgba(128, 87, 48, 255));"
 		"font-family: Goudy Old Style, Goudy Type, serif;"
@@ -88,7 +94,10 @@ public:
 		"}";
 
 	QString frameCharacter = "QFrame {"
-		"border: 3px solid #734d26;"
+		"border-top: 3px ridge #734d26;"
+		"border-left: 3px groove #734d26;"
+		"border-right: 3px ridge #734d26;"
+		"border-bottom: 3px groove #734d26;"
 		"}"
 		"QFrame > * { border: none; }";
 
@@ -140,7 +149,11 @@ public:
 		"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical { background-color: rgba(180, 147, 104, 255); border-left: 2px groove #734d26; }";
 
 	QString avatarBackground = "QLabel { background-color: rgba(230, 191, 148, 255); }";
-	QString frameAvatar = "QFrame { border: 3px solid #734d26; }";
+	QString frameAvatar = "QFrame {"
+		"border-top: 3px ridge #734d26;"
+		"border-left: 3px groove #734d26;"
+		"border-right: 3px ridge #734d26;"
+		"border-bottom: 3px groove #734d26;}";
 
 	QString backstory = "QTextEdit { color: #000000; margin: 1px 1px 1px 3px; " + inputField + " }"
 		"QScrollBar:vertical { background-color: #d2a679; }"

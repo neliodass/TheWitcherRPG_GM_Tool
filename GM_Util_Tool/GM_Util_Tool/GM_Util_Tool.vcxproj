@@ -96,7 +96,6 @@
     <ClCompile Include="exception_handling.cpp" />
     <ClCompile Include="PlayableCharacter.cpp" />
     <ClCompile Include="Team.cpp" />
-    <ClCompile Include="ui_stylization.cpp" />
     <ClCompile Include="Weapon.cpp" />
     <QtRcc Include="GM_Util_Tool.qrc" />
     <QtUic Include="GM_Util_Tool.ui" />
@@ -111,7 +110,7 @@
     <ClInclude Include="exception_handling.h" />
     <ClInclude Include="PlayableCharacter.h" />
     <ClInclude Include="Team.h" />
-    <ClInclude Include="ui_stylization.h" />
+    <ClInclude Include="MedivalStyleSheet.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

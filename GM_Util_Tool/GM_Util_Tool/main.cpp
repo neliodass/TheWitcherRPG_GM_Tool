@@ -1,9 +1,8 @@
 #include "GM_Util_Tool.h"
-#include "ui_stylization.h"
-#include <QtWidgets/QApplication>
-#include <PlayableCharacter.h>
-#include <Team.h>
 #include<iostream>
+#include <PlayableCharacter.h>
+#include <QtWidgets/QApplication>
+#include <Team.h>
 
 int main(int argc, char* argv[])
 {

@@ -1,6 +1,6 @@
 #include "CharacterListWidget.h"
+#include "MedivalStyleSheet.h"
 #include"PlayableCharacter.h"
-#include "ui_stylization.h"
 #include<iostream>
 #include <QLabel>
 #include <QVBoxLayout>

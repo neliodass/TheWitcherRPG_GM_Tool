@@ -55,9 +55,6 @@
     <ClCompile Include="CharacterListWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ui_stylization.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="exception_handling.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -75,7 +72,7 @@
     <ClInclude Include="Team.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ui_stylization.h">
+    <ClInclude Include="MedivalStyleSheet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="exception_handling.h">
