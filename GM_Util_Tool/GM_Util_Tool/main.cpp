@@ -5,12 +5,11 @@
 #include <Team.h>
 #include<iostream>
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-    QApplication a(argc, argv);
-    GM_Util_Tool w;
-    w.set_style();
-    w.show();
-
-    return a.exec();
+	QApplication a(argc, argv);
+	GM_Util_Tool w;
+	w.set_style();
+	w.show();
+	return a.exec();
 }

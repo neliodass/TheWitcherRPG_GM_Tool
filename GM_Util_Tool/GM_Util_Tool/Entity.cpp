@@ -2,7 +2,6 @@
 
 Entity::Entity()
 {
-
 }
 
 Entity::Entity(const std::string name, const int maxHealth, const int currentHealth,
@@ -19,12 +18,9 @@ Entity::Entity(const std::string name, const int maxHealth, const int currentHea
 	this->weapon = weapon;
 	this->alive = alive;
 	this->magical = magical;
-
 }
 
 void Entity::takeDamage(int damage)
 {
 	currentHealth -= damage;
 }
-
-

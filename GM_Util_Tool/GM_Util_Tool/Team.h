@@ -14,6 +14,4 @@ public:
 	bool readFromBinaryFile(const std::string& filename);
 	void removeCharacter(int toRemove);
 	void clearTeam();
-	
 };
-

@@ -1,7 +1,6 @@
 #include "GM_Util_Tool.h"
 #include "exception_handling.h"
 
-
 void showExceptionMessageBox(const std::vector<std::string>& exceptions) {
 	ExceptionMessageBox exc_window;
 	QString window_text;
@@ -14,10 +13,10 @@ void showExceptionMessageBox(const std::vector<std::string>& exceptions) {
 	exc_window.exec();
 }
 
-int characterSaveExceptions(const GM_Util_Tool &GM_Util_Tool) {
+int characterSaveExceptions(const GM_Util_Tool& GM_Util_Tool) {
 	std::vector<std::string> character_exceptions;
-	std::vector<QLineEdit*> int_inputs = {GM_Util_Tool.ui.inputAge, GM_Util_Tool.ui.inputHP, GM_Util_Tool.ui.inputArmor, GM_Util_Tool.ui.inputAttack, GM_Util_Tool.ui.inputEvasion, GM_Util_Tool.ui.inputSorcery, GM_Util_Tool.ui.inputWeaponDamage};
-	std::vector<std::string> labels = {"Age", "HP", "Armor", "Attack potential", "Evasion potential", "Sorcery potential", "Weapon damage"};
+	std::vector<QLineEdit*> int_inputs = { GM_Util_Tool.ui.inputAge, GM_Util_Tool.ui.inputHP, GM_Util_Tool.ui.inputArmor, GM_Util_Tool.ui.inputAttack, GM_Util_Tool.ui.inputEvasion, GM_Util_Tool.ui.inputSorcery, GM_Util_Tool.ui.inputWeaponDamage };
+	std::vector<std::string> labels = { "Age", "HP", "Armor", "Attack potential", "Evasion potential", "Sorcery potential", "Weapon damage" };
 
 	//Is name empty
 	if (GM_Util_Tool.ui.inputName->text().isEmpty()) {
@@ -38,11 +37,10 @@ int characterSaveExceptions(const GM_Util_Tool &GM_Util_Tool) {
 		}
 		character_exceptions.push_back("\n");
 	}
-	
+
 	if (character_exceptions.empty()) {
 		return 0;
 	}
 	showExceptionMessageBox(character_exceptions);
-		return -1;
+	return -1;
 }
-

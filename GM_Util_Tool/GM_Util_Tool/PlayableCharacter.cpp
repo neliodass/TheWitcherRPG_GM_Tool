@@ -9,7 +9,7 @@ PlayableCharacter::PlayableCharacter(CharacterRace characterRace, CharacterClass
 	this->age = age;
 	this->description = description;
 }
-auto PlayableCharacter::getClassString() const -> const std::string
+const std::string PlayableCharacter::getClassString() const
 {
 	switch (this->getClass())
 	{
@@ -28,12 +28,13 @@ auto PlayableCharacter::getClassString() const -> const std::string
 }
 void PlayableCharacter::saveToBinaryFile(const std::string& filename)
 {
-	std::ofstream file(filename, std::ios::app |std::ios::binary);
-	if (file.is_open()) {
+	std::ofstream file(filename, std::ios::app | std::ios::binary);
+	if (file.is_open())
+	{
 		file.write(reinterpret_cast<const char*>(&maxHealth), sizeof(maxHealth));
 		int length = name.size();
 		file.write(reinterpret_cast<const char*>(&length), sizeof(length));
-		file.write(name.c_str(), length );
+		file.write(name.c_str(), length);
 		file.write(reinterpret_cast<const char*>(&currentHealth), sizeof(currentHealth));
 		file.write(reinterpret_cast<const char*>(&armor), sizeof(armor));
 		file.write(reinterpret_cast<const char*>(&evadePotential), sizeof(evadePotential));
@@ -51,7 +52,8 @@ void PlayableCharacter::saveToBinaryFile(const std::string& filename)
 		length = description.size();
 		file.write(reinterpret_cast<const char*>(&length), sizeof(length));
 		file.write(description.c_str(), length);
-		if (!characterImage.isNull()) {
+		if (!characterImage.isNull())
+		{
 			int imageWidth = characterImage.width();
 			int imageHeight = characterImage.height();
 			QImage::Format imageFormat = characterImage.format();
@@ -77,16 +79,17 @@ void PlayableCharacter::saveToBinaryFile(const std::string& filename)
 		std::cerr << "Nie mo¿na otworzyæ pliku binarnego.\n";
 	}
 }
-void PlayableCharacter::readFromBinaryFile(std::ifstream& file) {
-	
-	if (file.is_open()) {
+void PlayableCharacter::readFromBinaryFile(std::ifstream& file)
+{
+	if (file.is_open())
+	{
 		file.read(reinterpret_cast<char*>(&maxHealth), sizeof(maxHealth));
 		int length;
-		file.read(reinterpret_cast< char*>(&length), sizeof(length));
-		char* buffer = new char[length + 1]; 
+		file.read(reinterpret_cast<char*>(&length), sizeof(length));
+		char* buffer = new char[length + 1];
 		file.read(buffer, length);
 		buffer[length] = '\0';
-		name = std::string(buffer); 
+		name = std::string(buffer);
 		delete[] buffer;
 		file.read(reinterpret_cast<char*>(&currentHealth), sizeof(currentHealth));
 		file.read(reinterpret_cast<char*>(&armor), sizeof(armor));
@@ -99,7 +102,7 @@ void PlayableCharacter::readFromBinaryFile(std::ifstream& file) {
 		buffer[length] = '\0';
 		weapon.name = std::string(buffer);
 		delete[] buffer;
-		file.read(reinterpret_cast< char*>(&weapon.damage), sizeof(weapon.damage));
+		file.read(reinterpret_cast<char*>(&weapon.damage), sizeof(weapon.damage));
 		file.read(reinterpret_cast<char*>(&alive), sizeof(alive));
 		file.read(reinterpret_cast<char*>(&magical), sizeof(magical));
 		file.read(reinterpret_cast<char*>(&characterRace), sizeof(characterRace));
@@ -113,9 +116,9 @@ void PlayableCharacter::readFromBinaryFile(std::ifstream& file) {
 		delete[] buffer;
 		int imageWidth, imageHeight, bytesPerLine, imageFormatInt, imageDataSize;
 		file.read(reinterpret_cast<char*>(&imageDataSize), sizeof(imageDataSize));
-		
 
-		if (imageDataSize > 0) {
+		if (imageDataSize > 0)
+		{
 			QByteArray imageData;
 			imageData.resize(imageDataSize);
 			file.read(imageData.data(), imageDataSize);
@@ -123,16 +126,14 @@ void PlayableCharacter::readFromBinaryFile(std::ifstream& file) {
 			file.read(reinterpret_cast<char*>(&imageHeight), sizeof(imageHeight));
 			file.read(reinterpret_cast<char*>(&imageFormatInt), sizeof(imageFormatInt));
 			file.read(reinterpret_cast<char*>(&bytesPerLine), sizeof(bytesPerLine));
-			
-			
 			QImage::Format imageFormat = static_cast<QImage::Format>(imageFormatInt);
 			QImage characterImage(reinterpret_cast<const uchar*>(imageData.data()), imageWidth, imageHeight, bytesPerLine, imageFormat);
-			characterImage.detach(); 
+			characterImage.detach();
 			this->characterImage = characterImage;
 		}
 	}
-	else {
+	else
+	{
 		std::cerr << "Nie mo¿na otworzyæ pliku binarnego.\n";
 	}
 }
-
