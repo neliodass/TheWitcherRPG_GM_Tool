@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/GM_Util_Tool">
         <file>resources/thewitcher.ico</file>
+        <file>resources/Comme-Regular.ttf</file>
+        <file>resources/Comme-Light.ttf</file>
+        <file>resources/Berylium.ttf</file>
+        <file>resources/background_main.png</file>
     </qresource>
 </RCC>
