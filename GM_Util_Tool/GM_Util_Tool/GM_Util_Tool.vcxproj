@@ -106,10 +106,10 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="CharacterListWidget.h" />
+    <ClInclude Include="DarkStyleSheet.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="exception_handling.h" />
     <ClInclude Include="PlayableCharacter.h" />
-    <ClInclude Include="StyleSheet.h" />
     <ClInclude Include="Team.h" />
     <ClInclude Include="MedivalStyleSheet.h" />
     <ClInclude Include="Weapon.h" />

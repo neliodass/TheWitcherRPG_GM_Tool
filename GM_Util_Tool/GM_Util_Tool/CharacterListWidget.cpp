@@ -1,4 +1,5 @@
 #include "CharacterListWidget.h"
+#include "DarkStyleSheet.h"
 #include "MedivalStyleSheet.h"
 #include"PlayableCharacter.h"
 #include<iostream>
@@ -15,5 +16,5 @@ CharacterListWidget::CharacterListWidget(PlayableCharacter& widgetCharacter, con
 	layout->addWidget(characterNameLabel);
 	layout->addWidget(professionNameLabel);
 	setLayout(layout);
-	this->setStyleSheet(MedivalStyleSheet().characterList);
+	this->setStyleSheet(DarkStyleSheet().characterList);
 }

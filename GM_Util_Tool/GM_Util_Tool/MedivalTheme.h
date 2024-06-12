@@ -1,11 +1,9 @@
 #pragma once
 
-#ifndef UI_STYLIZATION_H
-#define UI_STYLIZATION_H
-
+#include "Theme.h"
 #include <QString>
 
-class MedivalStyleSheet {
+class MedivalTheme :public Theme {
 public:
 	QString commonButtonStyle = "QPushButton {"
 		"margin: 3px 3px;"
@@ -184,4 +182,3 @@ public:
 		+ commonButtonStyle
 		+ normalLabel;
 };
-#endif

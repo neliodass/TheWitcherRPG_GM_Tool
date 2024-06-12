@@ -1,6 +1,7 @@
 ﻿#pragma warning(disable : 4703)
 
 #include "CharacterListWidget.h"
+#include "DarkStyleSheet.h"
 #include "exception_handling.h"
 #include "GM_Util_Tool.h"
 #include "MedivalStyleSheet.h"
@@ -241,7 +242,7 @@ void GM_Util_Tool::on_buttonDelete_clicked()
 
 void GM_Util_Tool::set_style()
 {
-	MedivalStyleSheet medival;
+	DarkStyleSheet medival;
 	//Buttons
 	ui.buttonAvatarChoice->setStyleSheet(medival.buttonAvatar);
 	ui.buttonDeleteAvatar->setStyleSheet(medival.buttonAvatar);

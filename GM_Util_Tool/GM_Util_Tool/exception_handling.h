@@ -1,4 +1,5 @@
 #pragma once
+#include "DarkStyleSheet.h"
 #include "GM_Util_Tool.h"
 #include "MedivalStyleSheet.h"
 #include <iostream>
@@ -19,7 +20,7 @@ public:
 		this->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
 		this->setIcon(QMessageBox::Critical);
 		this->setWindowTitle("Error");
-		this->setStyleSheet(MedivalStyleSheet().errorBox);
+		this->setStyleSheet(DarkStyleSheet().errorBox);
 	}
 protected:
 	bool event(QEvent* key_pressed) override
